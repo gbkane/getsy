@@ -34,13 +34,14 @@ name        | string    | not null
 description | text      |
 
 ## shops
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references user)
-name        | string    | not null
-description | text      |
-location    | string    | not null
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+owner_id        | integer   | not null, foreign key (references user)
+name            | string    | not null
+description     | text      |
+location        | string    | not null
+password_digest | string    | not null
 
 ## images
 column name | data type | details
@@ -58,4 +59,7 @@ id              | integer   | not null, primary key
 email           | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
-location        | string    |
+location        | string    | 
+first_name      | string    | not null
+last name       | string    | not null
+sex             | string    | not null

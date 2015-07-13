@@ -54,6 +54,7 @@ Getsy is a clone of Etsy built on Rails and Backbone. Users can:
 [Details][phase-five]
 
 ### Bonus Features (TBD)
+- [ ] Mailer for sign up/ password resets/ purchase confirmation
 - [ ] Custom shop urls
 - [ ] Categorized items with tags
 - [ ] Pagination/infinite scroll
