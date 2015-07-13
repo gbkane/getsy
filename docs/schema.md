@@ -42,6 +42,7 @@ name            | string    | not null
 description     | text      |
 location        | string    | not null
 password_digest | string    | not null
+rating          | float     |
 
 ## images
 column name | data type | details

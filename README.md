@@ -1,4 +1,4 @@
-# Petsy
+# Getsy
 
 [Heroku link][heroku]
 
@@ -12,14 +12,16 @@ Getsy is a clone of Etsy built on Rails and Backbone. Users can:
 - [ ] Create accounts
 - [ ] Create new items for sale
 - [ ] Create sessions (log in)
+- [ ] View items for sale
+- [ ] View different shops
 - [ ] Create shopping cart
 - [ ] View shopping cart
-- [ ] View items for sale
+- [ ] Checkout
 - [ ] Rate items
-- [ ] Navigate to different shops
+- [ ] Rate shops
 - [ ] Search for items by title
 - [ ] Search for items by shop
-- [ ] Follow shops
+
 
 ## Design Docs
 * [View Wireframes][views]
@@ -35,26 +37,27 @@ Getsy is a clone of Etsy built on Rails and Backbone. Users can:
 
 [Details][phase-one]
 
-### Phase 2:
+### Phase 2: View sale items and shops (~2 days)
 
 
 [Details][phase-two]
 
-### Phase 3:
+### Phase 3: Shopping Cart (~1-2 days)
 
 
 [Details][phase-three]
 
-### Phase 4:
+### Phase 4: Item and shop ratings (~2 days)
 
 [Details][phase-four]
 
-### Phase 5: 
+### Phase 5: Search for Items by name or shop (~2 days)
 
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] Mailer for sign up/ password resets/ purchase confirmation
+- [ ] Follow shops
+- [ ] Mailer for sign up/ password resets/ purchase confirmations
 - [ ] Custom shop urls
 - [ ] Categorized items with tags
 - [ ] Pagination/infinite scroll
