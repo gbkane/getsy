@@ -37,21 +37,39 @@ Getsy is a clone of Etsy built on Rails and Backbone. Users can:
 
 [Details][phase-one]
 
-### Phase 2: View sale items and shops (~2 days)
+
+### Phase 2: Viewing Shops and Items (~3 days)
+I will add API routes to serve shop and sale item data as JSON, then add Backbone
+models and collections that fetch data from those routes. By the end of this
+phase, users will be able to create items and view both shops and items, all
+inside a single Backbone app. I also plan to integrate Filepicker for file upload so
+users can add images to for sale items and shops. The after loggin page will combine 
+Shops and Items, while the before loggin will reflect the Items index.
 
 
 [Details][phase-two]
 
-### Phase 3: Shopping Cart (~1-2 days)
+## Phase 3: Editing and Displaying Carts (~1-2 days)
+I will make Backbone views of the cart that can be updated as new items are 
+added or removed from the cart.  This will also link to a checkout page with a 
+dummy form that will represent what would happen at this phase minus any 
+payment information.
 
 
 [Details][phase-three]
 
-### Phase 4: Item and shop ratings (~2 days)
+### Phase 4: Rating Shops and Items (~2 days)
+I will have a rating form for shops and items where users can give stars and 
+reviews that will be part of a Backbone collection that will be held by the 
+item or shop. Reviews will be a subview of the item/shop.
 
 [Details][phase-four]
 
-### Phase 5: Search for Items by name or shop (~2 days)
+### Phase 5: Searching for Shops and For sale items (~2 days)
+I'll need to add `search` routes to both the Shops and Items controllers. On the
+Backbone side, there will be a `SearchResults` composite view has `ShopsIndex`
+and `ItemsIndex` subviews. These views will use plain old `Shops` and `Items`
+collections, but they will fetch from the new `search` routes.
 
 [Details][phase-five]
 
