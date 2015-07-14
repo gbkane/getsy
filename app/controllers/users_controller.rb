@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :email,
       :password,
+      # :password_confirm,
       :fname,
       :lname,
       :sex,
