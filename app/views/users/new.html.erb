@@ -1,0 +1,22 @@
+<h3>Register</h3>
+
+<form action="<%= users_url %>" method="post">
+  <input type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <label>First name:
+    <input type="text" name="user[fname]">
+  </label><br>
+  <label>Last name:
+    <input type="text" name="user[lname]">
+  </label>
+  <label>Sex:
+    <input type="radio" name="user[sex]" value="Female">
+    <input type="radio" name="user[sex]" value="Male">
+    <input type="radio" name="user[sex]" value="Rather not say" checked>
+  </label>
+  <label>Email:
+    <input type="text" name="user[email]">
+  </label>
+
+</form>
