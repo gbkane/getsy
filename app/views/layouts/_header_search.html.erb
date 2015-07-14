@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <h1 class="getsy">Getsy</h1>
+  <form>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="text" name="" value="Search for items or shops">
+    <button class="search">Search</button>
+    <input list="ideas" />
+    <datalist id="ideas">
+      <option value="Cool Stuff">
+      <option value="Boring Stuff">
+    </datalist>
+  </form>
+</nav>

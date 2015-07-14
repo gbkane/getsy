@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= render partial: "layouts/header_search" %>
+    <% if signed_in? %>
+      <%= render partial: "layouts/header_nav_signed_in" %>
+    <% else %>
+      <%= render partial: "layouts/header_nav" %>
+  </header>
 
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>
