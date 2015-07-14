@@ -95,3 +95,14 @@
     display: block;
     padding: 20px;
   }
+
+  .sign-out{
+    display: block;
+    padding: 20px;
+  }
+
+  button.sign-in {
+    background: lightblue;
+    border-radius: 5px;
+    padding: 5px;
+  }
