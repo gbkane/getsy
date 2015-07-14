@@ -1,6 +1,6 @@
 <h1>Register a new item for sale!</h1>
 
-<form action="<%= items_url %>" method="post">
+<form action="<%= shop_items_url %>" method="post">
   <input type="hidden"
     name="authenticity_token"
     value="<%= form_authenticity_token %>">
@@ -18,7 +18,7 @@
     <input type="text" name="item[price]" value="<%= @item.price %>">
   </label>
   <br><br>
-  
+
   <label>Quantity in Stock
     <input type="text" name="item[qty]" value="<%= @item.qty %>">
   </label>

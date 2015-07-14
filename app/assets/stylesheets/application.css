@@ -19,8 +19,7 @@
   html, body, header, nav, h1, a,
   ul, li, button, section, img, div,
   h2, h3, h4, h5, h6, p, form,
-  fieldset, label, textarea,
-  span, article, footer, time, small {
+  fieldset, label, span, article, footer, time, small {
     margin: 0;
     padding: 0;
     border: 0;
@@ -101,7 +100,7 @@
     padding: 20px;
   }
 
-  button.sign-in {
+  button.submit {
     background: lightblue;
     border-radius: 5px;
     padding: 5px;

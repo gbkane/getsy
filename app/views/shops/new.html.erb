@@ -1,5 +1,5 @@
 <h1>Register a new shop!</h1>
-
+<%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
 <form action="<%= shops_url %>" method="post">
   <input type="hidden"
     name="authenticity_token"

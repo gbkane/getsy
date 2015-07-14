@@ -1,17 +1,22 @@
 class ShopsController < ApplicationController
+  before_action :require_signed_in!,
+    only: [:new, :create, :edit, :update]
+
   def index
     @shops = Shop.all
   end
 
   def new
+    @shop = Shop.new
   end
 
   def create
     @shop = Shop.new(shop_params)
+    @shop.owner_id = current_user.id
     if @shop.save
-      redirect_to :show
+      render :show
     else
-      flash[:errors] = @shop.errors.full_messages
+      flash.now[:errors] = @shop.errors.full_messages
       render :new
     end
   end
