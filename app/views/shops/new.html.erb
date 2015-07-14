@@ -1,0 +1,17 @@
+<h1>Register a new shop!</h1>
+
+<form action="<%= shops_url %>" method="post">
+  <input type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <label>Shop name:
+    <input type="text" name="shop[name]" value="<%= @shop.name %>">
+  </label>
+  <br><br>
+  <label>Description
+    <textarea name="shop[description]"></textarea>
+  </label>
+
+  <button class="submit">Submit</button>
+
+</form>
