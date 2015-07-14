@@ -1,5 +1,5 @@
 <h1>Sign In</h1>
-
+<%= flash[:errors].join("<br>").html_safe if flash[:errors]  %>
 <form action="<%= session_url %>" method="post">
   <input type="hidden"
     name="authenticity_token"
