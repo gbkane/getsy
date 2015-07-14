@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, uniqueness: true
 
+  has_many :shops,
+    class: "Shop",
+    foreign_key: :owner_id,
+    primary_key: :id
+
   attr_reader :password
   after_initialize :ensure_session_token
 
