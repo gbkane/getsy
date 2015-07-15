@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :require_signed_in!,
+    only: [:new, :create, :edit, :update]
+
   def index
     @items = Item.all
     render :index
@@ -17,7 +20,7 @@ class ItemsController < ApplicationController
     @item = Shop.find(params[:shop_id]).items.new(item_params)
 
     if @item.save
-      redirect_to shop_item_url(params[:shop_id],params[:id])
+      redirect_to shop_item_url(params[:shop_id],@item.id)
     else
       render :new
     end

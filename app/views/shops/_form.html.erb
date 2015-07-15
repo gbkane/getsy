@@ -1,0 +1,14 @@
+
+
+<input type="hidden"
+  name="authenticity_token"
+  value="<%= form_authenticity_token %>">
+<label>Shop name:
+  <input type="text" name="shop[name]" value="<%= @shop.name %>">
+</label>
+<br><br>
+
+<label>Description
+  <textarea name="shop[description]"><%= @shop.description %></textarea>
+</label>
+<br><br>

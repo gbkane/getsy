@@ -1,0 +1,7 @@
+<h1>Edit your shop!</h1>
+<%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
+<form action="<%= shop_url(@shop.id) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= render partial: "shops/form"%>
+  <button class="submit">Update</button>
+</form>
