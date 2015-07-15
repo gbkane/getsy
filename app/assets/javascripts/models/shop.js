@@ -1,3 +1,3 @@
-Getsy.Models.Shop = Getys.Model.extend({
-  urlRoot: "/shops"
+Getsy.Models.Shop = Backbone.Model.extend({
+  urlRoot: "/api/shops"
 })

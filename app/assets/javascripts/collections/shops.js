@@ -1,5 +1,5 @@
 Getsy.Collections.Shops = Backbone.Collection.extend({
-  url: "/shops",
+  url: "/api/shops",
   model: Getsy.Models.Shop,
 
   getOrFetch: function (id) {
@@ -22,4 +22,4 @@ Getsy.Collections.Shops = Backbone.Collection.extend({
 
 });
 
-Getys.Collections.shops = new Getsy.Collections.Shops();
+Getsy.Collections.shops = new Getsy.Collections.Shops();

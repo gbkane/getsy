@@ -1,0 +1,7 @@
+<ul class="shops">
+  <% shops.each (function (shop){ %>
+    <li><a class="nav-link" href="<%= shop_url(shop.id) %>">
+      <%= shop.escape('name') %>
+    </a><li>
+  <% }); %>
+</ul>

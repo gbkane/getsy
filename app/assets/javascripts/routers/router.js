@@ -6,7 +6,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index"
-  }
+  },
 
   shopsIndex: function () {
     this.collection.fetch()
@@ -15,7 +15,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(indexView);
-  }
+  },
   _swapView: function (view) {
     this._currentView && this._currentView.Remove();
     this._currentView = view;
