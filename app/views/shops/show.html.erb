@@ -1,5 +1,6 @@
 <h1>Welcome to <%= @shop.name %></h1>
 <br><br>
+<%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
 <ul>
   <% @shop.items.each do |item| %>
     <li><a class="nav-link" href="<%=shop_item_url(@shop.id, item.id) %>"><%= item.name %></a></li>

@@ -1,10 +1,11 @@
 class ShopsController < ApplicationController
+  before_action :require_owner, only: [:edit, :update]
   before_action :require_signed_in!,
     only: [:new, :create, :edit, :update]
 
-  def index
-    @shops = Shop.all
-  end
+  # def index
+  #   @shops = Shop.all
+  # end
 
   def new
     @shop = Shop.new
@@ -44,6 +45,14 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop).permit(:name, :description)
+  end
+
+  def require_owner
+
+    @shop = Shop.find(params[:id])
+    unless @shop.owner_id == current_user.id
+      redirect_to shop_url(@shop.id)
+    end
   end
 
 end

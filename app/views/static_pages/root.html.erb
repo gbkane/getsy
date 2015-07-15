@@ -1,5 +1,7 @@
 <h1>Welcome to Getsy</h1>
 <br><br><br><br><br><br>
+<%= render "shops/index" %>
+
 <% if signed_in? %>
   <a class="nav-link" href="<%= new_shop_url %>">Add a shop...</a>
 <% end %>
