@@ -1,8 +1,8 @@
 class ShopsController < ApplicationController
-  before_action :require_owner, only: [:edit, :update]
+
   before_action :require_signed_in!,
     only: [:new, :create, :edit, :update]
-
+  before_action :require_owner, only: [:edit, :update]
   # def index
   #   @shops = Shop.all
   # end
@@ -30,7 +30,7 @@ class ShopsController < ApplicationController
   def update
     @shop = Shop.find(params[:id])
     if @shop.update(shop_params)
-      redirect_to :show
+      redirect_to shop_url(@shop.id)
     else
       render :edit
     end

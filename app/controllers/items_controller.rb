@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+
   before_action :require_signed_in!,
     only: [:new, :create, :edit, :update]
+  before_action :require_owner, only: [:edit, :update]
 
   def index
     @items = Item.all
@@ -49,6 +51,13 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def require_owner
+    @item = Item.find(params[:id])
+    unless @item.shop.owner_id == current_user.id
+      redirect_to shop_item_url(@item.shop_id, @item.id)
+    end
+  end
 
   def item_params
     params.require(:item).permit(:name, :price, :qty, :description, :main_image_url)
