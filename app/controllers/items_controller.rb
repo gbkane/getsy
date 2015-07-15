@@ -15,29 +15,32 @@ class ItemsController < ApplicationController
 
   def create
     @item = Shop.find(params[:shop_id]).items.new(item_params)
+
     if @item.save
-      redirect_to shop_url(params[:shop_id])
+      redirect_to shop_item_url(params[:shop_id],params[:id])
     else
       render :new
     end
   end
 
   def edit
-    # @item = Item.find(params[:item][:id])
     @item = Item.find(params[:id])
+    render :edit
   end
 
   def update
-    @item = Item.find(params[:item][:id])
+    @item = Item.find(params[:id])
+
     if @item.update(item_params)
-      redirect_to shop_url(params[:shop_id])
+
+      redirect_to shop_item_url(params[:shop_id],params[:id])
     else
       render :edit
     end
   end
 
   def destroy
-    @item = Item.find(params[:item][:id])
+    @item = Item.find(params[:id])
     @item.destroy()
     redirect_to shop_url(params[:shop_id])
   end
@@ -45,7 +48,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :qty, :description)
+    params.require(:item).permit(:name, :price, :qty, :description, :main_image_url)
   end
 
 end
