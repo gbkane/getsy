@@ -117,13 +117,13 @@
     cursor: pointer;
   }
 
-  .add-shop {
+  .add-shop, .add-item {
     background: lightblue;
     border-radius: 5px;
     padding: 5px;
   }
 
-  .add-shop:hover{
+  .add-shop:hover, .add-item:hover{
     background: blue;
     color: #fff;
     cursor: pointer;
