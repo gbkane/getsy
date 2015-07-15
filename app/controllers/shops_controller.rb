@@ -11,8 +11,8 @@ class ShopsController < ApplicationController
   end
 
   def create
-    @shop = Shop.new(shop_params)
-    @shop.owner_id = current_user.id
+    @shop = current_user.shops.new(shop_params)
+    # @shop.owner_id = current_user.id
     if @shop.save
       render :show
     else

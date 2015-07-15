@@ -2,6 +2,7 @@
 <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
 
 <form action="<%= shops_url %>" method="post">
-  <%= render partial: "shops/form"%>
+  <%= render partial: "shops/form" %>
+  
   <button class="submit">Submit</button>
 </form>

@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   # validate :confirm_password
 
   has_many :shops,
-    class: "Shop",
+    class_name: "Shop",
     foreign_key: :owner_id,
     primary_key: :id
 
