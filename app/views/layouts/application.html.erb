@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <header class="group">
     <%= render partial: "layouts/header_search" %>
     <% if signed_in? %>
@@ -15,9 +16,14 @@
       <%= render partial: "layouts/header_nav" %>
     <% end %>
   </header>
-  <div class="main-content">
-    
+  <div class="main-content group">
+    <%= yield %>
   </div>
-  <%= yield %>
+
+
+
+  <footer class="site-footer">
+    <%= render partial: "layouts/footer" %>
+  </footer>
 </body>
 </html>

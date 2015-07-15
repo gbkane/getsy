@@ -11,7 +11,7 @@ Getsy is a clone of Etsy built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create new items for sale
-- [ ] Create sessions (log in)
+- [x] Create sessions (log in)
 - [ ] View items for sale
 - [ ] View different shops
 - [ ] Create shopping cart

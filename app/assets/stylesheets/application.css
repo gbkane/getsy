@@ -42,6 +42,9 @@
     display: block;
     clear: both;
   }
+  html, body {
+    height: 100%;
+  }
 
   body {
     font-family: sans-serif;
@@ -50,21 +53,40 @@
     background: #f8f8ff;
   }
 
+  .splash{
+    position: relative;
+    background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_P1Cj1Rye7HujFL7bv7Y93kgxAT9Y1PvnwN5CkOZSmzYSLUYv);
+    height: 400px;
+    background-size: cover;
+  }
+
+  .tag-line{
+    position: absolute;
+    width: 30%;
+    top: 50px;
+    left: 50px;
+    font-size: 48px;
+    color: #fff;
+  }
+
   header {
     background: #fff;
+    border-bottom: #eee solid 1px;
+  }
 
+  footer {
+    height: 100px;
+    background: #fff;
+    border-top: #eee solid 1px;
   }
 
   .nav-left{
-
     float: left;
-    /*background: blue;*/
   }
 
   .nav-right{
     float: right;
     padding-right: 20px;
-    /*background: red;*/
   }
 
   .getsy {
@@ -81,7 +103,6 @@
   }
 
   .search {
-    /*background: yellow;*/
     margin-right: 30px;
   }
 
