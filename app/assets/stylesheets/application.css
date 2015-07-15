@@ -88,6 +88,11 @@
   .nav-right > li {
     float: left;
     padding-top: 20px;
+    color: #aaa;
+  }
+
+  .nav-right > li:hover {
+    color: #000;
   }
 
   .nav-right > li > a{
@@ -104,4 +109,26 @@
     background: lightblue;
     border-radius: 5px;
     padding: 5px;
+  }
+
+  button.submit:hover{
+    background: blue;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .add-shop {
+    background: lightblue;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .add-shop:hover{
+    background: blue;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .radio:hover{
+    cursor: pointer;
   }
