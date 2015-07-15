@@ -2,6 +2,8 @@
 <h1 class="item"> <%= @item.name %></h1>
   <img src="<%= @item.main_image_url %>" alt="main image should be here">
   <br><br>
-  <a class="edit-item"href=" <%= edit_shop_item_url(@item.shop_id, @item.id) %>">
+  <a class="nav-link" href=" <%= edit_shop_item_url(@item.shop_id, @item.id) %>">
     Edit this item...
   </a>
+  <br><br>
+  <a class="nav-link" href="<%= shop_url(@item.shop_id) %>">Back to your shop</a>

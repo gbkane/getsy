@@ -117,18 +117,15 @@
     cursor: pointer;
   }
 
-  .add-shop, .add-item, .edit-item {
-    background: lightblue;
-    border-radius: 5px;
-    padding: 5px;
-  }
-
-  .add-shop:hover, .add-item:hover, .edit-item:hover{
-    background: blue;
-    color: #fff;
+  .radio:hover{
     cursor: pointer;
   }
 
-  .radio:hover{
+  .nav-link {
+    color: #aaa;
+  }
+
+  .nav-link:hover{
+    color: #000;
     cursor: pointer;
   }
