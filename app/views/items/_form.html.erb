@@ -1,0 +1,22 @@
+
+  <input type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <label>Item name:
+    <input type="text" name="item[name]" value="<%= @item.name %>">
+  </label>
+  <br><br>
+
+  <label>Description
+    <textarea name="item[description]"></textarea>
+  </label>
+  <br><br>
+
+  <label>Price
+    <input type="text" name="item[price]" value="<%= @item.price %>">
+  </label>
+  <br><br>
+
+  <label>Quantity in Stock
+    <input type="text" name="item[qty]" value="<%= @item.qty %>">
+  </label>
