@@ -1,7 +1,7 @@
 <h1>Register a new item for sale!</h1>
 
 
-<form action="<%= shop_item_url(@item.shop_id, @item.id) %>" method="post">
+<form action="<%= api_shop_item_url(@item.shop_id, @item.id) %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <%= render partial: "items/form" %>
 

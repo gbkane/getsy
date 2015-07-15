@@ -3,13 +3,13 @@
 <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
 <ul>
   <% @shop.items.each do |item| %>
-    <li><a class="nav-link" href="<%=shop_item_url(@shop.id, item.id) %>"><%= item.name %></a></li>
+    <li><a class="nav-link" href="<%=api_shop_item_url(@shop.id, item.id) %>"><%= item.name %></a></li>
   <% end %>
 
 </ul>
 <br><br><br>
 
 
-<a class= "nav-link" href="<%= new_shop_item_url(@shop.id) %>">List a new product</a>
+<a class= "nav-link" href="<%= new_api_shop_item_url(@shop.id) %>">List a new product</a>
 <br>
-<a class="nav-link" href="<%= edit_shop_url(@shop.id) %>">Edit your shop info...</a>
+<a class="nav-link" href="<%= edit_api_shop_url(@shop.id) %>">Edit your shop info...</a>
