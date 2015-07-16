@@ -1,7 +1,7 @@
-Getsy.Views.ShopsIndex = Backbone.View.extend({
-  template: JST['shops/index'],
+Getsy.Views.ItemsIndex = Backbone.View.extend({
+  template: JST['items/index'],
 
-  className: 'shops-index',
+  className: 'items-index',
 
   initialize: function () {
     this.listenTo(this.collection, 'add remove change', this.render);
@@ -9,9 +9,8 @@ Getsy.Views.ShopsIndex = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      shops: this.collection
+      items: this.collection
     });
-    console.log("backbone shopIndex view");
     this.$el.html(content);
 
     return this;

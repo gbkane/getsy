@@ -1,67 +1,67 @@
-module 
-class ItemsController < ApiController
+module Api
+  class ItemsController < ApiController
 
-  before_action :require_signed_in!,
-    only: [:new, :create, :edit, :update]
-  before_action :require_owner, only: [:edit, :update]
+    before_action :require_signed_in!,
+      only: [:new, :create, :edit, :update]
+    before_action :require_owner, only: [:edit, :update]
 
-  def index
-    @items = Item.all
-    render :index
-  end
-
-  def new
-    @item = Item.new
-  end
-
-  def show
-    @item = Item.find(params[:id])
-    render :show
-  end
-
-  def create
-    @item = Shop.find(params[:shop_id]).items.new(item_params)
-
-    if @item.save
-      redirect_to shop_item_url(params[:shop_id],@item.id)
-    else
-      render :new
+    def index
+      @items = Item.all
+      # render :index
     end
-  end
 
-  def edit
-    @item = Item.find(params[:id])
-    render :edit
-  end
+    def new
+      @item = Item.new
+    end
 
-  def update
-    @item = Item.find(params[:id])
+    def show
+      @item = Item.find(params[:id])
+      render json: @item
+    end
 
-    if @item.update(item_params)
+    def create
+      @item = Shop.find(params[:shop_id]).items.new(item_params)
 
-      redirect_to shop_item_url(params[:shop_id],params[:id])
-    else
+      if @item.save
+        redirect_to shop_item_url(params[:shop_id],@item.id)
+      else
+        render :new
+      end
+    end
+
+    def edit
+      @item = Item.find(params[:id])
       render :edit
     end
-  end
 
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy()
-    redirect_to shop_url(params[:shop_id])
-  end
+    def update
+      @item = Item.find(params[:id])
 
-  private
+      if @item.update(item_params)
 
-  def require_owner
-    @item = Item.find(params[:id])
-    unless @item.shop.owner_id == current_user.id
-      redirect_to shop_item_url(@item.shop_id, @item.id)
+        redirect_to shop_item_url(params[:shop_id],params[:id])
+      else
+        render :edit
+      end
+    end
+
+    def destroy
+      @item = Item.find(params[:id])
+      @item.destroy()
+      redirect_to shop_url(params[:shop_id])
+    end
+
+    private
+
+    def require_owner
+      @item = Item.find(params[:id])
+      unless @item.shop.owner_id == current_user.id
+        redirect_to shop_item_url(@item.shop_id, @item.id)
+      end
+    end
+
+    def item_params
+      params.require(:item).permit(:name, :price, :qty, :description, :main_image_url)
     end
   end
-
-  def item_params
-    params.require(:item).permit(:name, :price, :qty, :description, :main_image_url)
-  end
-
 end
