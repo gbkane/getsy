@@ -1,10 +1,15 @@
 Getsy.Collections.Items = Backbone.Collection.extend({
-  url: "/api/items",
-  model: Getsy.Models.Item,
-
   initialize: function (models, options) {
     this.shop = options.shop
   },
+
+  url: function () {
+    return this.shop.url() + '/items'
+  },
+  
+  model: Getsy.Models.Item,
+
+
 
   // getOrFetch: function (id) {
   //   var items = this;

@@ -1,3 +1,5 @@
 Getsy.Models.Item = Backbone.Model.extend({
-  urlRoot: "/api/items"
+  urlRoot: function () {
+    return this.collection.shop.url() + '/items'
+  },
 })

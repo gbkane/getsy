@@ -11,7 +11,6 @@ Getsy.Views.ShopsIndex = Backbone.View.extend({
     var content = this.template({
       shops: this.collection
     });
-    console.log("backbone shopIndex view");
     this.$el.html(content);
 
     return this;
