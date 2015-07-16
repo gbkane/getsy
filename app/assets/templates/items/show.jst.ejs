@@ -1,0 +1,7 @@
+<h1> <%= item.escape('name') %></h1>
+<img src="<%= item.escape('main_image_url') %>"
+  alt="<%= item.escape('name') %>">
+<br>
+<text>Price: $<%= item.escape('price') %></text>
+<br>
+<p> <%= item.escape('description') %>

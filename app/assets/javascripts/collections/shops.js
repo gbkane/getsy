@@ -4,7 +4,7 @@ Getsy.Collections.Shops = Backbone.Collection.extend({
 
   getOrFetch: function (id) {
     var shops = this;
-    var shop = shops.get('id');
+    var shop = shops.get(id);
 
     if(shop){
       shop.fetch();
@@ -18,6 +18,21 @@ Getsy.Collections.Shops = Backbone.Collection.extend({
     }
 
     return shop;
+  },
+
+  getOrFetchItem: function (shopId, id) {
+    debugger
+    var shop = this.get(shopId);
+    var item;
+
+    if(shop){
+      item = shop.items().getOrFetch(id);
+    }else{
+      item = new Getsy.Models.Item({id: id});
+      item.fetch();
+    }
+
+    return item;
   }
 
 });

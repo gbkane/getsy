@@ -4,7 +4,7 @@ Getsy.Views.ItemsIndex = Backbone.View.extend({
   className: 'items-index',
 
   initialize: function () {
-    this.listenTo(this.collection, 'add remove change', this.render);
+    this.listenTo(this.collection, 'sync', this.render);
   },
 
   render: function () {

@@ -1,8 +1,8 @@
 
-<a href="/#shops/<%= item.escape('shop_id')%>
-  /items/<%=item.escape('id')%>">
+<a href="/#shops/<%= item.escape('shop_id')%>/items/<%=item.id%>">
   <h2><%= item.escape('name') %></h2>
   <img src="<%= item.escape('main_image_url') %>"
     alt="<%= item.escape('name') %>">
-  <text><%= item.escape('price') %></text>
+  <br>
+  <text>Price: $<%= item.escape('price') %></text>
 </a>
