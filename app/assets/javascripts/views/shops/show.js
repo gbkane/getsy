@@ -1,4 +1,4 @@
-Getsy.Views.ShopShow = Backbone.View.extend({
+Getsy.Views.ShopShow = Backbone.CompositeView.extend({
   template: JST['shops/show'],
 
   initialize: function () {

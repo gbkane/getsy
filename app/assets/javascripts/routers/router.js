@@ -7,7 +7,8 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "shops": "shopsIndex",
-    "shops/:id": "shopsShow"
+    "shops/:id": "shopsShow",
+    "items/:id": "itemShow"
   },
 
   shopsIndex: function () {

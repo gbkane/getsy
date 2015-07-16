@@ -1,3 +1,3 @@
-Getsy.Models.Shop = Backbone.Model.extend({
+Getsy.Models.Item = Backbone.Model.extend({
   urlRoot: "/api/items"
 })

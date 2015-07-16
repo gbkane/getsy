@@ -10,11 +10,12 @@ Getsy.Models.Shop = Backbone.Model.extend({
   },
 
   parse: function (response) {
+    debugger
     if (response.items) {
       this.items().set(response.items, {parse: true});
       delete response.items;
     }
 
-    return payload;
+    return response;
   }
 })
