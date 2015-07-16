@@ -1,7 +1,7 @@
 <ul class="shops">
   <h1>This is in Backbone</h1>
   <% shops.each (function (shop){ %>
-    <li><a class="nav-link" href="<%= shop_url(shop.id) %>">
+    <li><a class="nav-link" href="/#shops/<%= shop.escape('id') %>">
       <%= shop.escape('name') %>
     </a><li>
   <% }); %>
