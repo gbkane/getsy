@@ -7,7 +7,8 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "shops": "shopsIndex",
-    "shops/:id": "shopsShow",
+    "shops/new": "shopNew",
+    "shops/:id": "shopShow",
     "shops/:shop_id/items/:id": "itemShow"
   },
 
@@ -20,13 +21,24 @@ Getsy.Routers.Router = Backbone.Router.extend({
     this._swapView(indexView);
   },
 
-  shopsShow: function (id) {
+  shopShow: function (id) {
     var shop = this.collection.getOrFetch(id)
     var showView = new Getsy.Views.ShopShow({
       model: shop
     });
 
     this._swapView(showView);
+  },
+
+  shopNew: function (){
+
+    var shop = new Getsy.Models.Shop();
+    var newView = new Getsy.Views.ShopForm({
+      collection: this.collection,
+      model: shop
+    });
+
+    this._swapView(newView);
   },
 
   itemShow: function (shopId, id) {
