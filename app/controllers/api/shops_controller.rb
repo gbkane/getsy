@@ -4,7 +4,7 @@ module Api
     before_action :require_signed_in!,
       only: [:new, :create, :edit, :update]
     before_action :require_owner, only: [:edit, :update]
-    
+
     def index
       @shops = Shop.all
       render json: @shops
