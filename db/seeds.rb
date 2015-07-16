@@ -14,6 +14,7 @@ s1 = u1.shops.create(name: 'Cool Things Shop')
 s2 = u1.shops.create(name: 'Ordinary Things Shop')
 
 i1 = s1.items.create(name: "Lightning in a bottle", price: 59.98,
-      main_image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTnxJ2NdhKIhQj-0FxI7-C0b1XLbPk8dEPNNLJuZa8Y4iUsqRop")
+      main_image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTnxJ2NdhKIhQj-0FxI7-C0b1XLbPk8dEPNNLJuZa8Y4iUsqRop",
+      description: "This product is difficult to ship.")
 i2 = s2.items.create(name: "English Muffin", price: 3,
       main_image_url:  "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQaYQzbfuVp37s9Cp9bO-3Jgkg1MINaS9d8shKObg_ESQgs5cqwmQ")
