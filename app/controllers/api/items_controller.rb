@@ -7,7 +7,7 @@ module Api
 
     def index
       @items = Item.all
-      render json: @items
+      render :index
     end
 
     def new

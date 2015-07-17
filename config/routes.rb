@@ -9,6 +9,6 @@ Rails.application.routes.draw do
       resources :items, except: :index
     end
 
-    resources :items, only: :index
+    resources :items, only: :index, defaults: {format: :html}
   end
 end

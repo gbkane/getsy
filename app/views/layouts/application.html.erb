@@ -7,26 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="wrapper">
-  <header class="group">
-    <%= render partial: "layouts/header_search" %>
-    <% if signed_in? %>
-      <%= render partial: "layouts/header_nav_signed_in" %>
-    <% else %>
-      <%= render partial: "layouts/header_nav" %>
-    <% end %>
-  </header>
+  <div class="wrapper">
+    <header class="group">
+      <%= render partial: "layouts/header_search" %>
+      <% if signed_in? %>
+        <%= render partial: "layouts/header_nav_signed_in" %>
+      <% else %>
+        <%= render partial: "layouts/header_nav" %>
+      <% end %>
+    </header>
 
 
-  <%= yield %>
-  <div class="push group"></div>
-</div>
+    <%= yield %>
 
-  
+  </div>
 
-
-
-
-
+  <footer class="site-footer">
+    <%= render partial: "layouts/footer" %>
+  </footer>
 </body>
 </html>
