@@ -4,7 +4,7 @@ Getsy.Collections.Items = Backbone.Collection.extend({
   },
 
   url: function () {
-    return this.shop.url() + '/items'
+    return 'api/shops/'+ this.get('shop_id') + '/items'
   },
 
   model: Getsy.Models.Item,

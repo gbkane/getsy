@@ -1,2 +1,6 @@
 <h1>Welcome to <%= shop.escape("name") %></h1>
+<p class="description"><%= shop.escape("description") %></p>
 <section id="items"></section>
+<a class="nav-link" href="/#shops/<%= shop.escape('id') %>/edit">
+  Edit Shop Info...
+</a>
