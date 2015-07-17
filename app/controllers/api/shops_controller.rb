@@ -17,33 +17,27 @@ module Api
 
     def create
       @shop = current_user.shops.new(shop_params)
-      # @shop.owner_id = current_user.id
 
       if @shop.save
-        # render :show
         render json: @shop
       else
-        # flash.now[:errors] = @shop.errors.full_messages
-        # render :new
         render json: @shop.errors.full_messages, status: :unprocessable_entity
       end
     end
 
     def edit
-      
+
       @shop = Shop.find(params[:id])
       render json: @shop
     end
 
     def update
-
       @shop = Shop.find(params[:id])
+
       if @shop.update(shop_params)
         render json: @shop
-        # redirect_to shop_url(@shop.id)
       else
         render json: @shop.errors.full_messages, status: :unprocessable_entity
-        # render :edit
       end
     end
 
@@ -59,8 +53,8 @@ module Api
     end
 
     def require_owner
-
       @shop = Shop.find(params[:id])
+      
       unless @shop.owner_id == current_user.id
         redirect_to shop_url(@shop.id)
       end

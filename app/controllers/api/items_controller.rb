@@ -8,7 +8,6 @@ module Api
     def index
       @items = Item.all
       render json: @items
-      # render :index
     end
 
     def new
@@ -27,16 +26,13 @@ module Api
 
       if @item.save
         render json: @item
-        # redirect_to shop_item_url(params[:shop_id],@item.id)
       else
         render json: @item.errors.full_messages, status: :unprocessable_entity
-        # render :new
       end
     end
 
     def edit
       @item = Item.find(params[:id])
-      # render :edit
       render json: @item
     end
 
@@ -45,9 +41,7 @@ module Api
 
       if @item.update(item_params)
         render json: @item
-        # redirect_to shop_item_url(params[:shop_id],params[:id])
       else
-        # render :edit
         render json: @item.errors.full_messages, status: :unprocessable_entity
       end
     end
