@@ -28,3 +28,5 @@ Getsy.Collections.Items = Backbone.Collection.extend({
   }
 
 });
+
+// Getsy.Collections.items = new Getsy.Collections.Items();

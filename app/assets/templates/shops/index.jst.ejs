@@ -1,7 +1,21 @@
 <ul class="shops">
   <% shops.each (function (shop){ %>
-    <li><a class="nav-link" href="/#shops/<%= shop.escape('id') %>">
-      <%= shop.escape('name') %>
-    </a><li>
+    <li>
+      <ul>
+
+        <% for(var i = 0; i < 4; i++){ %>
+          <li>Item(<%=shop.escape('name')%>)</li>
+        <% } %>
+          <!-- <li></li>
+          <li></li>
+          <li></li> -->
+        <li>
+          <a class="nav-link" href="/#shops/<%= shop.escape('id') %>">
+            <%= shop.escape('name') %>
+          </a>
+        </li>
+
+      </ul>
+    </li>
   <% }); %>
 </ul>

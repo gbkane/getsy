@@ -7,7 +7,8 @@ module Api
 
     def index
       @shops = Shop.all
-      render json: @shops
+      render :index
+      # render json: @shops
     end
 
     def new
@@ -54,7 +55,7 @@ module Api
 
     def require_owner
       @shop = Shop.find(params[:id])
-      
+
       unless @shop.owner_id == current_user.id
         redirect_to shop_url(@shop.id)
       end

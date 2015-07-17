@@ -7,6 +7,7 @@ window.Getsy = {
     new Getsy.Routers.Router({
       $rootEl: $('#main-content'),
       shops: Getsy.Collections.shops
+      // items: Getsy.Collections.items
     });
     Backbone.history.start();
   }

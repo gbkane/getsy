@@ -26,7 +26,7 @@ Getsy.Views.ItemsIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    debugger
+    
     var content = this.template({
       item: this.model
     });
