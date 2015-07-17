@@ -12,7 +12,7 @@ module Api
     end
 
     def new
-      @item = Item.new
+      @item = Shop.find(params[:shop_id]).items.new()
       render json: @item
     end
 
@@ -22,6 +22,7 @@ module Api
     end
 
     def create
+
       @item = Shop.find(params[:shop_id]).items.new(item_params)
 
       if @item.save

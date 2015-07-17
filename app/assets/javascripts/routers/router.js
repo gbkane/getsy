@@ -10,7 +10,9 @@ Getsy.Routers.Router = Backbone.Router.extend({
     "shops/new": "shopNew",
     "shops/:id": "shopShow",
     "shops/:id/edit": "shopEdit",
-    "shops/:shop_id/items/:id": "itemShow"
+    "shops/:shop_id/items/new" : "itemNew",
+    "shops/:shop_id/items/:id": "itemShow",
+    "shops/:shop_id/items/:id/edit": "itemEdit"
 
   },
 
@@ -41,10 +43,10 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(newView);
+    this.$rootEl.prepend("<h1>Register a new shop!</h1>");
   },
 
   shopEdit: function (id){
-    
     var shop = this.collection.getOrFetch(id);
     var editView = new Getsy.Views.ShopForm({
       collection: this.collection,
@@ -52,11 +54,37 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(editView)
+    this.$rootEl.prepend("<h1>Edit Your Shop</h1>");
   },
 
   itemShow: function (shopId, id) {
+
     var item = this.collection.getOrFetchItem(shopId, id)
     var showView = new Getsy.Views.ItemShow({
+      model: item
+    });
+
+    this._swapView(showView);
+  },
+
+  itemNew: function (shopId) {
+    var shop = this.collection.getOrFetch(shopId);
+    var item = new Getsy.Models.Item();
+    
+    var newView = new Getsy.Views.ItemForm({
+      collection: shop.items(),
+      model: item
+    });
+
+    this._swapView(newView);
+  },
+
+  itemEdit: function (shopId, id) {
+    var shop = this.collection.getOrFetch(shopId);
+    var item = this.collection.getOrFetchItem(shopId, id)
+
+    var showView = new Getsy.Views.ItemForm({
+      collection: shop.items(),
       model: item
     });
 
