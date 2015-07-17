@@ -4,7 +4,10 @@
       <ul>
 
         <% for(var i = 0; i < 4; i++){ %>
-          <li>Item(<%=shop.escape('name')%>)</li>
+          <li> 
+            <img src="<%=shop.items().first().escape('main_image_url') %>"
+              alt='image'>
+          </li>
         <% } %>
           <!-- <li></li>
           <li></li>
