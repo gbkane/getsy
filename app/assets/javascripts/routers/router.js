@@ -43,7 +43,9 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(newView);
-    this.$rootEl.prepend("<h1>Register a new shop!</h1>");
+    this.$rootEl.prepend(
+      "<h1 class='form-title'>Register a new shop!</h1>"
+    );
   },
 
   shopEdit: function (id){
@@ -54,7 +56,9 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(editView)
-    this.$rootEl.prepend("<h1>Edit Your Shop</h1>");
+    this.$rootEl.prepend(
+      "<h1 class='form-title'>Edit Your Shop</h1>"
+    );
   },
 
   itemShow: function (shopId, itemId) {
@@ -77,6 +81,9 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(newView);
+    this.$rootEl.prepend(
+      "<h1 class='form-title'>Register Your Item</h1>"
+    );
   },
 
   itemEdit: function (shopId, itemId) {
@@ -89,6 +96,9 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(showView);
+    this.$rootEl.prepend(
+      "<h1 class='form-title'>Edit Your Item</h1>"
+    );
   },
 
   _swapView: function (view) {

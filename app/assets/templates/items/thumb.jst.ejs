@@ -6,3 +6,7 @@
   <br>
   <text>Price: $<%= item.escape('price') %></text>
 </a>
+<a class="nav-link"
+  href="/#shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
+  Edit Item...
+</a>

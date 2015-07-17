@@ -5,3 +5,7 @@
 <text>Price: $<%= item.escape('price') %></text>
 <br>
 <p> <%= item.escape('description') %>
+<a class="nav-link"
+  href="/#shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
+  Edit Item...
+</a>
