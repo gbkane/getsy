@@ -1,12 +1,11 @@
-<div id="content">
-  <% if signed_in? %>
-    <%= render partial: "static_pages/root_signed_in" %>
-  <% else %>
-    <%= render partial: "static_pages/root_guest" %>
-  <% end %>
-  
+<div id="main-content">
+  <section class="splash">
+    <p class="tag-line">Get stuff from other people.<p>
+  </section>
+  <br>
+  <a class="browse" href="/#shops">Browse</a>
 <div>
-
-
-
 <br><br><br>
+<footer class="site-footer">
+  <%= render partial: "layouts/footer" %>
+</footer>

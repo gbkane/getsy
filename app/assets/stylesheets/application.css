@@ -16,7 +16,7 @@
 
 /*********** RESET **********/
 
-  html, body, header, nav, h1, a,
+  html, body, header, footer, nav, h1, a,
   ul, li, button, section, img, div,
   h2, h3, h4, h5, h6, p, form,
   fieldset, label, span, article, footer, time, small {
@@ -31,6 +31,7 @@
     vertical-align: inherit;
     box-sizing: inherit;
     background: transparent;
+    display: block;
   }
 
   ul {
@@ -41,9 +42,6 @@
     content: "";
     display: block;
     clear: both;
-  }
-  html, body {
-    height: 100%;
   }
 
   body {
@@ -74,12 +72,26 @@
     border-bottom: #eee solid 1px;
   }
 
-  footer {
+  .site-footer {
     height: 100px;
     background: #fff;
     border-top: #eee solid 1px;
   }
 
+  .browse {
+    text-align: center;
+    display: block;
+    margin: 100px auto;
+    padding: 10px;
+    color: #fff;
+    background: #0B799E;
+    width: 200px;
+    border-radius: 5px;
+  }
+
+  .browse:hover {
+    background: #01698C;
+  }
   .nav-left{
     float: left;
   }
@@ -127,14 +139,15 @@
   }
 
   button.submit {
-    background: lightblue;
+    background: #0B799E;
+    color: #fff;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
+    margin: 10px;
   }
 
   button.submit:hover{
-    background: blue;
-    color: #fff;
+    background: #01698C;
     cursor: pointer;
   }
 
@@ -143,6 +156,7 @@
   }
 
   .nav-link {
+    padding: 10px;
     color: #aaa;
   }
 

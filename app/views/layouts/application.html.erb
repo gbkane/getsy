@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="wrapper">
   <header class="group">
     <%= render partial: "layouts/header_search" %>
     <% if signed_in? %>
@@ -16,15 +16,13 @@
       <%= render partial: "layouts/header_nav" %>
     <% end %>
   </header>
-  <div id="main-content">
 
-  </div>
 
   <%= yield %>
+  <div class="push group"></div>
+</div>
+
   
-  <footer class="site-footer">
-    <%= render partial: "layouts/footer" %>
-  </footer>
 
 
 
