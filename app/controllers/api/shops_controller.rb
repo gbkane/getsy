@@ -30,16 +30,20 @@ module Api
     end
 
     def edit
+      fail
       @shop = Shop.find(params[:id])
-      render :edit
+      render json: @shop
     end
 
     def update
+
       @shop = Shop.find(params[:id])
       if @shop.update(shop_params)
-        redirect_to shop_url(@shop.id)
+        render json: @shop
+        # redirect_to shop_url(@shop.id)
       else
-        render :edit
+        render json: @shop.errors.full_messages, status: :unprocessable_entity
+        # render :edit
       end
     end
 

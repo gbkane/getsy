@@ -9,11 +9,13 @@ Getsy.Routers.Router = Backbone.Router.extend({
     "shops": "shopsIndex",
     "shops/new": "shopNew",
     "shops/:id": "shopShow",
+    "shops/:id/edit": "shopEdit",
     "shops/:shop_id/items/:id": "itemShow"
+
   },
 
   shopsIndex: function () {
-    
+
     this.collection.fetch()
     var indexView = new Getsy.Views.ShopsIndex({
       collection: this.collection
@@ -40,6 +42,15 @@ Getsy.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(newView);
+  },
+
+  shopEdit: function (id){
+    var shop = this.collection.getOrFetchItem(id)
+    var editView = new Getsy.Views.ShopForm({
+      model: shop
+    });
+
+    this._swapView(editView)
   },
 
   itemShow: function (shopId, id) {
