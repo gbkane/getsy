@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json} do
     resources :shops do
-      resources :items
+      resources :items, except: :index
     end
+
+    resources :items, only: :index
   end
 end

@@ -6,6 +6,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
+    "": "itemsIndex",
     "shops": "shopsIndex",
     "shops/new": "shopNew",
     "shops/:id": "shopShow",
@@ -14,6 +15,15 @@ Getsy.Routers.Router = Backbone.Router.extend({
     "shops/:shop_id/items/:id": "itemShow",
     "shops/:shop_id/items/:id/edit": "itemEdit"
 
+  },
+
+  itemsIndex: function () {
+    
+    var indexView = new Getsy.Views.ItemsIndex({
+      collection: this.collection
+    });
+
+    this._swapView(indexView);
   },
 
   shopsIndex: function () {
