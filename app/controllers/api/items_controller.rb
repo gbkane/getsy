@@ -7,11 +7,13 @@ module Api
 
     def index
       @items = Item.all
+      render json: @items
       # render :index
     end
 
     def new
       @item = Item.new
+      render json: @item
     end
 
     def show
@@ -23,25 +25,29 @@ module Api
       @item = Shop.find(params[:shop_id]).items.new(item_params)
 
       if @item.save
-        redirect_to shop_item_url(params[:shop_id],@item.id)
+        render json: @item
+        # redirect_to shop_item_url(params[:shop_id],@item.id)
       else
-        render :new
+        render json: @item.errors.full_messages, status: :unprocessable_entity
+        # render :new
       end
     end
 
     def edit
       @item = Item.find(params[:id])
-      render :edit
+      # render :edit
+      render json: @item
     end
 
     def update
       @item = Item.find(params[:id])
 
       if @item.update(item_params)
-
-        redirect_to shop_item_url(params[:shop_id],params[:id])
+        render json: @item
+        # redirect_to shop_item_url(params[:shop_id],params[:id])
       else
-        render :edit
+        # render :edit
+        render json: @item.errors.full_messages, status: :unprocessable_entity
       end
     end
 

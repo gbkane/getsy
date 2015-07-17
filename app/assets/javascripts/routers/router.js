@@ -34,7 +34,6 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   shopNew: function (){
-
     var shop = new Getsy.Models.Shop();
     var newView = new Getsy.Views.ShopForm({
       collection: this.collection,
@@ -45,8 +44,10 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   shopEdit: function (id){
-    var shop = this.collection.getOrFetchItem(id)
+    
+    var shop = this.collection.getOrFetch(id);
     var editView = new Getsy.Views.ShopForm({
+      collection: this.collection,
       model: shop
     });
 

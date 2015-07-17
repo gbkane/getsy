@@ -7,6 +7,10 @@ Getsy.Views.ShopForm = Backbone.View.extend({
     "click .submit": "submit"
   },
 
+  initialize: function (){
+    this.listenTo(this.model, 'sync', this.render)
+  },
+
   render: function () {
     var content = this.template({
       shop: this.model
@@ -17,7 +21,7 @@ Getsy.Views.ShopForm = Backbone.View.extend({
   },
 
   submit: function (event) {
-    debugger
+  
     event.preventDefault();
     var that = this;
 

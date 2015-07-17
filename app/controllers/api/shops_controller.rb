@@ -30,7 +30,7 @@ module Api
     end
 
     def edit
-      fail
+      
       @shop = Shop.find(params[:id])
       render json: @shop
     end
