@@ -6,7 +6,7 @@ Getsy.Views.ItemShow = Backbone.View.extend({
   },
 
   render: function () {
-    debugger
+    
     var content = this.template({
       item: this.model
     });

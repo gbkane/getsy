@@ -13,6 +13,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   shopsIndex: function () {
+    
     this.collection.fetch()
     var indexView = new Getsy.Views.ShopsIndex({
       collection: this.collection

@@ -21,7 +21,7 @@ Getsy.Collections.Shops = Backbone.Collection.extend({
   },
 
   getOrFetchItem: function (shopId, id) {
-    debugger
+    
     var shop = this.get(shopId);
     var item;
 

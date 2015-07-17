@@ -1,13 +1,15 @@
 <h1>Register a new shop!</h1>
 
   <label>Shop name:
-    <input type="text" name="name" value="<%= shop.escape('name') %>">
+    <input type="text" name="name"
+      value="<%= shop.escape('name') %>">
   </label>
   <br><br>
 
   <label>Description
-    <textarea name="description"><%= shop.escape('description') %></textarea>
+    <textarea name="description">
+      <%= shop.escape('description') %>
+    </textarea>
   </label>
   <br><br>
   <button class="submit">Submit</button>
-</form>

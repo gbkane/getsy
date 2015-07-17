@@ -11,14 +11,14 @@ module Api
     end
 
     def new
-      @shop = Shop.new
+      @shop = current_user.shops.new
       render json: @shop
     end
 
     def create
       @shop = current_user.shops.new(shop_params)
       # @shop.owner_id = current_user.id
-      
+
       if @shop.save
         # render :show
         render json: @shop

@@ -1,14 +1,10 @@
 Getsy.Views.ShopForm = Backbone.View.extend({
   template: JST['shops/form'],
-
+  tagName: 'form',
   className: 'shops-form',
 
   events: {
     "click .submit": "submit"
-  },
-
-  initialize: function () {
-    this.listenTo(this.model, 'add', this.render);
   },
 
   render: function () {
@@ -21,16 +17,16 @@ Getsy.Views.ShopForm = Backbone.View.extend({
   },
 
   submit: function (event) {
+    debugger
     event.preventDefault();
     var that = this;
-    debugger
-    var attrs = this.$el.serializeJSON()
 
+    var attrs = this.$el.serializeJSON();
     this.model.set(attrs);
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, {merge: true});
-        Backbone.navigate("/shops", {trigger: true});
+        Backbone.history.navigate("/shops", {trigger: true});
       }
     });
   }
