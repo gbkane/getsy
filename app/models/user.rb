@@ -29,10 +29,30 @@ class User < ActiveRecord::Base
 
   attr_reader :password, :password_confirm
   after_initialize :ensure_session_token
+  before_validation :ensure_session_token
 
-  def self.find_by_credentials(user_params)
-    user = User.find_by_email(user_params[:email])
-    user.try(:is_password?, user_params[:password]) ? user : nil
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
+    return nil if user.nil?
+    user.password_digest.is_password?(password) ? user : nil
+  end
+
+  def self.find_or_create_by_auth_hash(auth_hash)
+    user = User.find_by(
+            provider: auth_hash[:provider],
+            uid: auth_hash[:uid])
+
+    unless user
+      user = User.create!(
+            provider: auth_hash[:provider],
+            uid: auth_hash[:uid],
+            first_name: auth_hash[:info][:name].split.first,
+            last_name: auth_hash[:info][:name].split.last,
+            email: auth_hash[:info][:nickname], #bad solution
+            password: SecureRandom::urlsafe_base64)
+    end
+
+    user
   end
 
   def password=(password)
@@ -40,25 +60,16 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  def is_password?(password)
-    BCrypt::Password.new(self.password_digest).is_password?(password)
+  def password_digest
+    BCrypt::Password.new(super)
   end
-
-  def reset_token!
-    self.session_token = SecureRandom.urlsafe_base64(16)
-    self.save!
-    self.session_token
-  end
-
-  private
 
   def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64(16)
+    self.session_token ||= SecureRandom::urlsafe_base64
   end
 
-  # def confirm_password(password, password_confirm)
-  #   unless password == password_confirm
-  #     redirect_to new_user_url
-  #   end
-  # end
+  def reset_session_token!
+    self.session_token = SecureRandom::urlsafe_base64
+    self.save!
+  end
 end
