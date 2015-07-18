@@ -1,0 +1,20 @@
+<h1>BackboneAuthDemo</h1>
+
+<% if(Getsy.currentUser.isSignedIn()) { %>
+
+  <p>
+    Signed in as:
+    <a href="#users/<%= Getsy.currentUser.id %>"><%= Getsy.currentUser.escape("fname") %></a> |
+    <a href="#" id="sign-out-link">Sign Out</a>
+  </p>
+
+<% } else { %>
+
+  <p>
+    <a href="#users/new">Sign Up</a> |
+    <a href="#session/new">Sign In</a>
+  </p>
+
+<% } %>
+
+<hr>

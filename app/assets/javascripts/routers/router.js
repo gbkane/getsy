@@ -2,11 +2,17 @@ Getsy.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     shopsCollection = options.shops;
+    usersCollection = new Getsy.Collections.Users();
+    usersCollection.fetch();
     // itemsCollection = options.items;
   },
 
   routes: {
     // "items": "itemsIndex",
+    "": "index",
+    "users/new": "new",
+    "users/:id": "show",
+    "session/new": "signIn",
     "shops": "shopsIndex",
     "shops/new": "shopNew",
     "shops/:id": "shopShow",
@@ -17,6 +23,71 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   },
 
+
+  index: function(){
+      var callback = this.index.bind(this);
+      if (!this._requireSignedIn(callback)) { return; }
+
+      var indexView = new Getsy.Views.UsersIndex({
+        collection: usersCollection
+      });
+      this._swapView(indexView);
+    },
+
+    new: function(){
+    if (!this._requireSignedOut()) { return; }
+
+    var model = new usersCollection.model();
+    var formView = new Getsy.Views.UsersForm({
+      collection: usersCollection,
+      model: model
+    });
+    this._swapView(formView);
+  },
+
+  show: function(id){
+    var callback = this.show.bind(this, id);
+    if (!this._requireSignedIn(callback)) { return; }
+
+    var model = usersCollection.getOrFetch(id);
+    var showView = new Getsy.Views.UsersShow({
+      model: model
+    });
+    this._swapView(showView);
+  },
+
+  signIn: function(callback){
+    if (!this._requireSignedOut(callback)) { return; }
+
+    var signInView = new Getsy.Views.SignIn({
+      callback: callback
+    });
+    this._swapView(signInView);
+  },
+
+  _requireSignedIn: function(callback){
+    if (!Getsy.currentUser.isSignedIn()) {
+      callback = callback || this._goHome.bind(this);
+      this.signIn(callback);
+      return false;
+    }
+
+    return true;
+  },
+
+  _requireSignedOut: function(callback){
+    if (Getsy.currentUser.isSignedIn()) {
+      callback = callback || this._goHome.bind(this);
+      callback();
+      return false;
+    }
+
+    return true;
+  },
+
+  _goHome: function(){
+    Backbone.history.navigate("", { trigger: true });
+  },
   // itemsIndex: function () {
   //   itemsCollection.fetch();
   //   var indexView = new Getsy.Views.ItemsIndex({
