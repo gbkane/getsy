@@ -1,12 +1,14 @@
-<ul class="shops">
+<ul class="all-items">
   <% shops.each (function (shop){ %>
     <li>
-      <ul>
+      <ul class="items-by-shop group">
 
         <% for(var i = 0; i < 4; i++){ %>
-          <li> 
-            <img src="<%=shop.items().first().escape('main_image_url') %>"
-              alt='image'>
+          <li>
+            <a href="#shops/<%= shop.id %>/items/<%=shop.items().first().id%>">
+              <img src="<%=shop.items().first().escape('main_image_url') %>"
+                alt='image'>
+            </a>
           </li>
         <% } %>
           <!-- <li></li>

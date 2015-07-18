@@ -4,8 +4,6 @@ Getsy.Views.ShopsIndex = Backbone.View.extend({
   className: 'shops-index',
 
   initialize: function () {
-    debugger
-    
     this.listenTo(this.collection, 'sync', this.render);
   },
 
