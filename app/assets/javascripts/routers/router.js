@@ -9,7 +9,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   routes: {
     // "items": "itemsIndex",
-    // "": "index",
+    "": "splash",
     "users/new": "new",
     "users/:id": "show",
     "session/new": "signIn",
@@ -22,7 +22,10 @@ Getsy.Routers.Router = Backbone.Router.extend({
     "shops/:shop_id/items/:id/edit": "itemEdit"
 
   },
-
+  splash: function (){
+    var view = new Getsy.Views.Splash();
+    this._swapView(view);
+  },
 
   // index: function(){
   //     var callback = this.index.bind(this);

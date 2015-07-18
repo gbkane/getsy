@@ -15,7 +15,3 @@ window.Getsy = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Getsy.initialize();
-});

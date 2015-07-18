@@ -27,7 +27,7 @@ Getsy.Views.UsersForm = Backbone.View.extend({
     this.model.set(userData);
     this.model.save({}, {
       success: function(){
-        BackboneAuthDemo.currentUser.fetch();
+        Getsy.currentUser.fetch();
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate("#shops", { trigger: true });
       },
