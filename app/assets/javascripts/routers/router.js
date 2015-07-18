@@ -9,7 +9,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   routes: {
     // "items": "itemsIndex",
-    "": "index",
+    // "": "index",
     "users/new": "new",
     "users/:id": "show",
     "session/new": "signIn",
@@ -24,15 +24,15 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
 
-  index: function(){
-      var callback = this.index.bind(this);
-      if (!this._requireSignedIn(callback)) { return; }
-
-      var indexView = new Getsy.Views.UsersIndex({
-        collection: usersCollection
-      });
-      this._swapView(indexView);
-    },
+  // index: function(){
+  //     var callback = this.index.bind(this);
+  //     if (!this._requireSignedIn(callback)) { return; }
+  //
+  //     var indexView = new Getsy.Views.UsersIndex({
+  //       collection: usersCollection
+  //     });
+  //     this._swapView(indexView);
+  //   },
 
     new: function(){
     if (!this._requireSignedOut()) { return; }
