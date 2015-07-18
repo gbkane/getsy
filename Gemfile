@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 
 gem 'backbone-on-rails'
+
+gem 'figaro'
+gem 'omniauth-twitter'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

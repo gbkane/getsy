@@ -22,7 +22,7 @@ Getsy.Views.Header = Backbone.View.extend({
     event.preventDefault();
     Getsy.currentUser.signOut({
       success: function(){
-        Backbone.history.navigate("session/new", { trigger: true });
+        Backbone.history.navigate("", { trigger: true });
       }
     });
   }

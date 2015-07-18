@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       resources :items
     end
   end
+
+  get "/auth/:provider/callback", to: "api/sessions#omniauth"
 end
