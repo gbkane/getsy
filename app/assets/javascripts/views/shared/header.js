@@ -19,9 +19,11 @@ Getsy.Views.Header = Backbone.View.extend({
   },
 
   signOut: function(event){
+    
     event.preventDefault();
     Getsy.currentUser.signOut({
       success: function(){
+
         Backbone.history.navigate("", { trigger: true });
       }
     });

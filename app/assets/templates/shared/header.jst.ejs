@@ -22,22 +22,19 @@
 
     <% if(Getsy.currentUser.isSignedIn()) { %>
 
-      <p>
-        Signed in as:
-        <ul class="nav-right group">
-          <li><a href="/#shops">Home</a></li>
-          <li><a href="#users/<%= Getsy.currentUser.id %>">
-            <%= Getsy.currentUser.escape("fname") %>
-            </a>
-          </li>
-          <li>
-            <button class="sign-out" id="sign-out-link">Sign Out</button>
-          </li>
-          <li><a href="#">Cart</a></li>
-        </ul>
-        <!-- <a href="#users/<%= Getsy.currentUser.id %>"><%= Getsy.currentUser.escape("fname") %></a> |
-        <a href="#" id="sign-out-link">Sign Out</a> -->
-      </p>
+      <ul class="nav-right group">
+        <li><a href="/#shops">Home</a></li>
+        <li><a href="#users/<%= Getsy.currentUser.id %>">
+          <%= Getsy.currentUser.escape("fname") %>
+          </a>
+        </li>
+        <li>
+          <button class="sign-out" id="sign-out-link">Sign Out</button>
+        </li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    
+
 
     <% } else { %>
       <ul class="nav-right group">

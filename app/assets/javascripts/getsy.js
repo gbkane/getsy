@@ -7,10 +7,10 @@ window.Getsy = {
     this.currentUser = new Getsy.Models.CurrentUser();
     this.currentUser.fetch();
     this.header = new Getsy.Views.Header({ el: "#header" });
+    this.footer = new Getsy.Views.Footer({ el: "#footer" });
     new Getsy.Routers.Router({
       $rootEl: $('#main-content'),
       shops: Getsy.Collections.shops
-      // items: Getsy.Collections.items
     });
     Backbone.history.start();
   }
