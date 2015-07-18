@@ -69,6 +69,8 @@
   }
   .header-wrapper{
     background: #fff;
+    height: 100px;
+    border-bottom: 1px solid #eee;
   }
 
   header {
@@ -115,8 +117,12 @@
   }
 
   .search:hover {
-    background: #01698C;
+    opacity: 0.9;
     cursor: pointer;
+  }
+
+  .search:active {
+    background: #01698C;
   }
 
   input.text-search {
@@ -130,8 +136,14 @@
   }
 
   .browse:hover {
+    /*background: #01698C;*/
+    opacity: 0.9;
+  }
+
+  .browse:active{
     background: #01698C;
   }
+
   .nav-left{
     float: left;
   }
@@ -145,7 +157,7 @@
     font-family: Times;
     font-size: 48px;
     color: #f45800;
-    padding: 0px 40px;
+    padding: 0 40px 0 0;
     margin-top: -10px;
   }
 
@@ -175,7 +187,7 @@
 
   .sign-out{
     display: block;
-    padding: 20px;
+    padding: 10px;
   }
 
   button.submit {
@@ -187,8 +199,12 @@
   }
 
   button.submit:hover{
-    background: #01698C;
+    opacity: 0.9;
     cursor: pointer;
+  }
+
+  button.submit:active{
+    background: #01698C;
   }
 
   .radio:hover{
@@ -211,10 +227,16 @@
     border-radius: 5px;
     overflow: hidden;
     margin: 20px;
+    border: 1px solid #ddd;
   }
 
   .items-by-shop > li{
     float: left;
+    /*opacity: .9;*/
+  }
+
+  .items-by-shop > li:hover{
+    opacity: .9;
   }
 
   .items-by-shop img{
@@ -225,7 +247,4 @@
 
   .items-by-shop > .nav-link {
     color: #000;
-  }
-  .items-by-shop > li .nav-link:hover{
-
   }

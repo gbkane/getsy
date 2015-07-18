@@ -8,6 +8,7 @@
             <a href="#shops/<%= shop.id %>/items/<%=shop.items().first().id%>">
               <img src="<%=shop.items().first().escape('main_image_url') %>"
                 alt='image'>
+                <span class="mask"></span>
             </a>
           </li>
         <% } %>

@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="header-wrapper">
-    <header class="group">
+  <div class="header-wrapper group">
+    <header >
       <%= render partial: "layouts/header_search" %>
       <% if signed_in? %>
         <%= render partial: "layouts/header_nav_signed_in" %>
