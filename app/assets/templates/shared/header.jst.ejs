@@ -1,36 +1,55 @@
-<h1 class="getsy">Getsy</h1>
 
-<% if(Getsy.currentUser.isSignedIn()) { %>
+<div class="header-wrapper">
 
-  <p>
-    Signed in as:
-    <ul class="nav-right group">
-      <li><a href="/#shops">Home</a></li>
-      <li><a href="#users/<%= Getsy.currentUser.id %>">
-        <%= Getsy.currentUser.escape("fname") %>
-        </a>
+    <ul class="nav-left group">
+      <li class="getsy">Getsy</li>
+      <li>
+        <input class="text-search" type="text" name="searchcontent" value=""
+          placeholder="Search for items or shops">
       </li>
       <li>
-        <button class="sign-out" id="sign-out-link">Sign Out</button>
+        <button class="search">Search</button>
       </li>
-      <li><a href="#">Cart</a></li>
+      <li>
+        <input list="ideas" />
+        <datalist id="ideas">
+          <option value="Cool Stuff">
+          <option value="Boring Stuff">
+        </datalist>
+      </li>
+
     </ul>
-    <!-- <a href="#users/<%= Getsy.currentUser.id %>"><%= Getsy.currentUser.escape("fname") %></a> |
-    <a href="#" id="sign-out-link">Sign Out</a> -->
-  </p>
 
-<% } else { %>
-  <ul class="nav-right group">
-    <li><a href="#">Home</a></li>
-    <li><a href="#session/new">Sign In</a></li>
-    <li><a href="#users/new">Register</a></li>
-    <li><a href="#">Cart</a></li>
-  </ul>
-  <!-- <p>
-    <a href="#users/new">Sign Up</a> |
-    <a href="#session/new">Sign In</a>
-  </p> -->
+    <% if(Getsy.currentUser.isSignedIn()) { %>
 
-<% } %>
+      <p>
+        Signed in as:
+        <ul class="nav-right group">
+          <li><a href="/#shops">Home</a></li>
+          <li><a href="#users/<%= Getsy.currentUser.id %>">
+            <%= Getsy.currentUser.escape("fname") %>
+            </a>
+          </li>
+          <li>
+            <button class="sign-out" id="sign-out-link">Sign Out</button>
+          </li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+        <!-- <a href="#users/<%= Getsy.currentUser.id %>"><%= Getsy.currentUser.escape("fname") %></a> |
+        <a href="#" id="sign-out-link">Sign Out</a> -->
+      </p>
 
-<hr>
+    <% } else { %>
+      <ul class="nav-right group">
+        <li><a href="#">Home</a></li>
+        <li><a href="#session/new">Sign In</a></li>
+        <li><a href="#users/new">Register</a></li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+
+
+    <% } %>
+
+
+
+</div>
