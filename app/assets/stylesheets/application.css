@@ -32,6 +32,7 @@
     box-sizing: inherit;
     background: transparent;
     display: block;
+    -webkit-appearance: none;
   }
 
   ul {
@@ -52,43 +53,43 @@
     background: #f5f5f1;
   }
 
-  .splash{
-    position: relative;
-    background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_P1Cj1Rye7HujFL7bv7Y93kgxAT9Y1PvnwN5CkOZSmzYSLUYv);
-    height: 400px;
-    background-size: cover;
-  }
-
-  .tag-line{
-    position: absolute;
-    width: 30%;
-    top: 50px;
-    left: 50px;
-    font-size: 48px;
-    color: #fff;
-  }
-  .header-wrapper{
-    background: #fff;
-    height: 100px;
-    width: 980px;
-    margin: auto;
-  }
 
 
-  #header {
-    background: #fff;
-    border-bottom: #eee solid 1px;
-  }
 
-  .container {
+  /*.container {
     width: 980px;
     margin: 0 auto;
-  }
+  }*/
 
   .site-footer {
     height: 100px;
     background: #fff;
     border-top: #eee solid 1px;
+  }
+  /************ Buttons ***********/
+
+  .browse, .search, .submit{
+    color: #fff;
+    border: solid 1px;
+    border-color: #54acc7 #4ca0ba #398a9d;
+    background: -webkit-linear-gradient(top, #98d0e0 2%, #68b8d1 8%, #4fa9c6 58%, #4fa9c6 95%, #4ca4c0);
+  }
+
+  .search:hover, .browse:hover, .submit:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  .search:active, .browse:active, .submit:active {
+    background: #01698C;
+  }
+
+  .search, .submit{
+    padding: 10px 20px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-size: 14px;
+    font-weight: 700;
   }
 
   .browse {
@@ -96,33 +97,27 @@
     display: block;
     margin: 100px auto;
     padding: 10px;
-    color: #fff;
-    border: solid 1px;
-    border-color: #54acc7 #4ca0ba #398a9d;
-    background: -webkit-linear-gradient(top, #98d0e0 2%, #68b8d1 8%, #4fa9c6 58%, #4fa9c6 95%, #4ca4c0);
     width: 200px;
     border-radius: 3px;
   }
 
-  .search{
-    padding: 10px 20px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    border: solid 1px;
-    border-color: #54acc7 #4ca0ba #398a9d;
-    background: -webkit-linear-gradient(top, #98d0e0 2%, #68b8d1 8%, #4fa9c6 58%, #4fa9c6 95%, #4ca4c0);
+  .submit {
+    border-radius: 3px;
+    margin: 20px;
   }
 
-  .search:hover {
-    opacity: 0.9;
-    cursor: pointer;
+
+/********** Header **********/
+  .header-wrapper{
+    background: #fff;
+    height: 100px;
+    width: 980px;
+    margin: auto;
   }
 
-  .search:active {
-    background: #01698C;
+  #header {
+    background: #fff;
+    border-bottom: #eee solid 1px;
   }
 
   input.text-search {
@@ -133,15 +128,6 @@
     border-bottom-left-radius: 3px;
     font-size: 14px;
     padding-left: 10px;
-  }
-
-  .browse:hover {
-    /*background: #01698C;*/
-    opacity: 0.9;
-  }
-
-  .browse:active{
-    background: #01698C;
   }
 
   .nav-left{
@@ -190,24 +176,7 @@
     padding: 10px;
   }
 
-  button.submit {
-    background: #0B799E;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-  }
-
-  button.submit:hover{
-    opacity: 0.9;
-    cursor: pointer;
-  }
-
-  button.submit:active{
-    background: #01698C;
-  }
-
-  .radio:hover{
+  .sign-out:hover{
     cursor: pointer;
   }
 
@@ -220,13 +189,27 @@
     cursor: pointer;
     text-decoration: underline;
   }
+
+  /********** Shop Index **********/
+  .shops-index{
+    width: 980px;
+    margin: auto;
+  }
+
+  .all-items{
+    float: left;
+    width: 690px;
+    margin: 0 auto;
+  }
+
   .items-by-shop{
     float: left;
     width: 308px;
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
-    margin: 20px;
+    margin: 20px 0 0 20px;
+
     border: 1px solid #ddd;
   }
 
@@ -247,4 +230,72 @@
 
   .items-by-shop > .nav-link {
     color: #000;
+  }
+
+/*********** Misc ***********/
+  .radio:hover{
+    cursor: pointer;
+  }
+
+  .splash{
+    position: relative;
+    background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_P1Cj1Rye7HujFL7bv7Y93kgxAT9Y1PvnwN5CkOZSmzYSLUYv);
+    height: 400px;
+    background-size: cover;
+  }
+
+  .tag-line{
+    position: absolute;
+    width: 30%;
+    top: 50px;
+    left: 50px;
+    font-size: 48px;
+    color: #fff;
+  }
+
+  /*********** User Forms **********/
+  .user-form{
+    width: 550px;
+    margin: 40px auto;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  h2.user-form-title {
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  .user{
+    width: 300px;
+    margin: 40px auto;;
+  }
+
+  .user > label {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .user-input-text {
+    height: 30px;
+    width: 300px;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+
+  .user > button.submit {
+    margin: 10px auto;
+  }
+
+  .twitter {
+    color: blue;
+    text-align: center;
+  }
+
+  .twitter:hover {
+    text-decoration: underline;
   }

@@ -1,39 +1,53 @@
-<h2>Sign Up</h2>
+<h2 class="user-form-title">Register</h2>
 
-<form>
+<form class="user">
 
   <label>
-    First Name
-    <input type="text" name="user[fname]"
+    First Name<br>
+    <input class="user-input-text" type="text" name="user[fname]"
            value="<%= user.escape("fname") %>">
   </label>
 
   <br>
 
   <label>
-    Last Name
-    <input type="text" name="user[lname]"
+    Last Name<br>
+    <input class="user-input-text" type="text" name="user[lname]"
            value="<%= user.escape("lname") %>">
   </label>
 
   <br>
 
+  <label>Sex:
+    <br>
+    Female<input
+      class="radio" type="radio"
+      name="user[sex]" value="F">
+    Male<input
+      class="radio" type="radio"
+      name="user[sex]" value="M">
+    Rather not say<input
+      class="radio" type="radio"
+      name="user[sex]" value="O" checked>
+  </label>
+  <br>
+
   <label>
-    Email
-    <input type="email" name="user[email]"
+    Email<br>
+    <input class="user-input-text" type="email" name="user[email]"
            value="<%= user.escape("email") %>">
   </label>
 
   <br>
 
   <label>
-    Password
-    <input type="password" name="user[password]"
+    Password<br>
+    <input class="user-input-text" type="password" name="user[password]"
            value="<%= user.escape("password") %>">
   </label>
 
   <br>
 
-  <button>Create Account</button>
+  <button class="submit">Create Account</button>
 
 </form>

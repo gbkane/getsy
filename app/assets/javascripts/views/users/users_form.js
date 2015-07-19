@@ -5,6 +5,7 @@ Getsy.Views.UsersForm = Backbone.View.extend({
   },
 
   template: JST['users/form'],
+  className: "user-form",
 
   events: {
     "submit form": "submit"

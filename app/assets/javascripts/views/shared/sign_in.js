@@ -5,6 +5,8 @@ Getsy.Views.SignIn = Backbone.View.extend({
     this.listenTo(Getsy.currentUser, "signIn", this.signInCallback);
   },
 
+  className: 'user-form',
+
   events: {
     "submit form": "submit"
   },
