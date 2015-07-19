@@ -272,7 +272,7 @@
 
   .user{
     width: 300px;
-    margin: 40px auto;;
+    margin: 40px auto;
   }
 
   .user > label {
@@ -292,8 +292,11 @@
   }
 
   .twitter {
+    padding: 10px;
+    width: 150px;
     color: blue;
     text-align: center;
+    margin: auto;
   }
 
   .twitter:hover {
