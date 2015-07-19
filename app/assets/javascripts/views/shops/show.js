@@ -1,6 +1,8 @@
 Getsy.Views.ShopShow = Backbone.CompositeView.extend({
   template: JST['shops/show'],
 
+  className: 'container',
+
   initialize: function () {
     this.collection = this.model.items()
     this.listenTo(this.model, 'sync', this.render)

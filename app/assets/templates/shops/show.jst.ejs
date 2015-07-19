@@ -1,10 +1,18 @@
-<h1>Welcome to <%= shop.escape("name") %></h1>
-<p class="description"><%= shop.escape("description") %></p>
-<section id="items"></section>
-<a class="nav-link" href="/#shops/<%= shop.escape('id') %>/edit">
-  Edit Shop Info...
-</a>
-<a class="nav-link"
-  href="/#shops<%= shop.escape('id') %>/items/new">
-  Add new item...
-</a>
+<section class="shop-show group">
+  <section class="title">
+    <h1 class="shop-name"><%= shop.escape("name") %></h1>
+  </section>
+
+  <p class="description"><%= shop.escape("description") %></p>
+
+  <section id="items"></section>
+  <section class="left-sidebar">
+    <a class="nav-link" href="/#shops/<%= shop.escape('id') %>/edit">
+      Edit Shop Info...
+    </a>
+    <a class="nav-link"
+      href="/#shops<%= shop.escape('id') %>/items/new">
+      Add new item...
+    </a>
+</section>
+</section>

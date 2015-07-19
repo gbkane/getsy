@@ -1,6 +1,8 @@
 Getsy.Views.ItemThumb = Backbone.View.extend({
   template: JST['items/thumb'],
 
+  className: "thumb",
+
   initialize: function () {
     this.listenTo(this.model, 'add sync', this.render)
   },

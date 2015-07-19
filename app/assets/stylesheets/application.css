@@ -18,7 +18,7 @@
 
   html, body, header, footer, nav, h1, a,
   ul, li, button, section, img, div,
-  h2, h3, h4, h5, h6, p, form,
+  h2, h3, h4, h5, h6, p, form, text,
   fieldset, label, span, article, footer, time, small {
     margin: 0;
     padding: 0;
@@ -302,3 +302,84 @@
   .twitter:hover {
     text-decoration: underline;
   }
+
+  /************* Shop Show Item Thumbs*************/
+  .shop-show {
+    width: 980px;
+    margin: auto;
+  }
+
+  #items {
+    width: 780px;
+    float: right;
+    background: #fff;
+    padding-top: 8px;
+  }
+
+  .thumb {
+    float: left;
+    border: 1px solid #eee;
+    background: #fff;
+    margin:8px 4px;
+
+  }
+
+  .thumb > a >img{
+    width: 175px;
+    height: 150px;
+    margin: auto;
+    padding-bottom: 5px;
+  }
+
+  .item-name {
+    font-size: 12px;
+    color: #666;
+    overflow: hidden;
+    padding: 5px;
+    margin: 0;
+  }
+
+  .price {
+    display: block;
+    float: right;
+    color: #78C042;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .price > span {
+    font-size: 9px;
+    float: right;
+    padding: 3px 5px;
+  }
+
+  .edit {
+    color: #aaa;
+    float: left;
+    font-size: 12px;
+  }
+.shop-show {
+  background: #fff;
+}
+
+.shop-name{
+  background: #fff;
+  padding: 30px;
+  float: right;
+  font-size: 48px;
+  font-weight: 100;
+  color: #666;
+}
+
+.container {
+  background: #fff;
+}
+
+.left-sidebar {
+  float: left;
+  width: 190px;
+  background: #f5f5f1;
+  margin: 15px auto;
+  border-radius: 5px;
+  min-height: 400px;
+}
