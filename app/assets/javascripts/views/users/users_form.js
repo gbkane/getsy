@@ -30,10 +30,20 @@ Getsy.Views.UsersForm = Backbone.View.extend({
       success: function(){
         Getsy.currentUser.fetch();
         that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate("#shops", { trigger: true });
+        Getsy.currentUser.signIn({
+          email: userData.email,
+          password: userData.password,
+          success: function () {
+            Backbone.history.navigate("#shops", { trigger: true });
+          },
+          error: function(){
+            alert("Wrong username/password combination. Please try again.");
+          }
+        });
+
       },
       error: function(data, errors){
-      
+
         alert(errors.responseText);
         console.log(errors.responseText);
 
