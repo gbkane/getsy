@@ -137,10 +137,17 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   shopEdit: function (id){
-    if (!Getsy.currentUser.isSignedIn()){
+    var shop = shopsCollection.getOrFetch(id);
+    if (Getsy.currentUser.id !== shop.get('owner_id')){
+      alert("This shop does not belong to you!")
+      Backbone.history.navigate(
+        "shops/" + id,
+        {trigger:true}
+      )
+    }else if (!Getsy.currentUser.isSignedIn()){
       Backbone.history.navigate("session/new", {trigger:true})
     }else{
-      var shop = shopsCollection.getOrFetch(id);
+
       var editView = new Getsy.Views.ShopForm({
         collection: shopsCollection,
         model: shop
@@ -164,10 +171,18 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   itemNew: function (shopId) {
-    if (!Getsy.currentUser.isSignedIn()){
+    var shop = shopsCollection.getOrFetch(shopId);
+
+    if (Getsy.currentUser.id !== shop.get('owner_id')){
+      alert("This shop does not belong to you!")
+      Backbone.history.navigate(
+        "shops/" + shopId,
+        {trigger:true}
+      )
+    }else if (!Getsy.currentUser.isSignedIn()){
       Backbone.history.navigate("session/new", {trigger:true})
     }else{
-      var shop = shopsCollection.getOrFetch(shopId);
+
       var item = new Getsy.Models.Item({shop_id: shopId});
 
       var newView = new Getsy.Views.ItemForm({
@@ -185,12 +200,11 @@ Getsy.Routers.Router = Backbone.Router.extend({
     var shop = shopsCollection.getOrFetch(shopId);
 
     if (Getsy.currentUser.id !== shop.get('owner_id')){
-      alert("This does not belong to you!")
+      alert("This item does not belong to you!")
       Backbone.history.navigate(
         "shops/" + shopId + "/items/" + itemId,
         {trigger:true}
       )
-
     }else if (!Getsy.currentUser.isSignedIn()){
       Backbone.history.navigate("session/new", {trigger:true})
     }else{
