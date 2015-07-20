@@ -244,7 +244,8 @@
 
   .splash{
     position: relative;
-    background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_P1Cj1Rye7HujFL7bv7Y93kgxAT9Y1PvnwN5CkOZSmzYSLUYv);
+    /*background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_P1Cj1Rye7HujFL7bv7Y93kgxAT9Y1PvnwN5CkOZSmzYSLUYv);*/
+    background-image: url(http://swansonquotes.com/wp-content/uploads/extras-canoeing-with-ron-1000x500.jpg);
     height: 400px;
     background-size: cover;
   }
