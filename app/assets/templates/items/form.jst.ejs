@@ -1,31 +1,35 @@
-<label>Item name:
-  <input type="text" name="name"
-    value="<%= item.escape('name') %>">
-</label>
-<br><br>
 
-<label>Description:
-  <textarea name="description">
-    <%= item.escape('description') %>
-  </textarea>
-</label>
-<br><br>
+<div class="item">
+  <label>Item name<br>
+    <input class="form-input-text" type="text" name="name"
+      value="<%= item.escape('name') %>">
+  </label>
+  <br><br>
 
-<label>Price:
-  <input type="text" name="price"
-    value="<%= item.escape('price') %>">
-</label>
-<br><br>
+  <label>Description<br>
+    <textarea class="form-description" name="description">
+      <%= item.escape('description') %>
+    </textarea>
+  </label>
+  <br><br>
 
-<label>Quantity in Stock:
-  <input type="text" name="qty"
-    value="<%=item.escape('qty') %>">
-</label>
-<br><br>
+  <label>Price<br>
+    <input class="form-input-text" type="text" name="price"
+      value="<%= item.escape('price') %>">
+  </label>
+  <br><br>
 
-<label>Image Url:
-  <input type="text" name="main_image_url"
-    value="<%= item.escape('main_image_url') %>">
-</label>
+  <label>Quantity in Stock<br>
+    <input class="form-input-text" type="text" name="qty"
+      value="<%=item.escape('qty') %>">
+  </label>
+  <br><br>
 
-<button class="submit">Submit</button>
+  <label>Image Url<br>
+    <input class="form-input-text" type="text" name="main_image_url"
+      value="<%= item.escape('main_image_url') %>">
+  </label>
+
+  <button class="submit">Submit</button>
+
+</div>

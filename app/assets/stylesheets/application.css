@@ -127,7 +127,7 @@
 
   input.text-search {
     background: #fff;
-    height: 32px;
+    height: 35px;
     width: 200px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -259,7 +259,7 @@
   }
 
   /*********** User Forms **********/
-  .user-form, .shops-form{
+  .user-form, .shops-form, .items-form{
     width: 550px;
     margin: 40px auto;
     background: #eee;
@@ -275,12 +275,14 @@
     text-align: center;
   }
 
-  .user, .shop{
+
+
+  .user, .shop, .item{
     width: 300px;
     margin: 40px auto;
   }
 
-  .user > label, .shop > label {
+  .user > label, .shop > label, .item > label {
     font-size: 12px;
     font-weight: 300;
   }
@@ -299,8 +301,14 @@
     border-left: 1px solid #aaa;
   }
 
-  .user > button.submit, .shops-form > .submit {
+  .user > button.submit{
     margin: 10px auto;
+  }
+  .shops-form > .submit {
+    margin: 0px auto 40px auto;
+  }
+  .item > .submit {
+    margin: 40px auto;
   }
 
   .twitter {
