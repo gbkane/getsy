@@ -70,7 +70,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   _requireSignedIn: function(callback){
     if (!Getsy.currentUser.isSignedIn()) {
-      callback = callback || this._goHome.bind(this);
+      callback = callback || this._goSignIn.bind(this);
       this.signIn(callback);
       return false;
     }
@@ -80,7 +80,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   _requireSignedOut: function(callback){
     if (Getsy.currentUser.isSignedIn()) {
-      callback = callback || this._goHome.bind(this);
+      callback = callback || this._goSignIn.bind(this);
       callback();
       return false;
     }
@@ -88,8 +88,8 @@ Getsy.Routers.Router = Backbone.Router.extend({
     return true;
   },
 
-  _goHome: function(){
-    Backbone.history.navigate("", { trigger: true });
+  _goSignIn: function(){
+    Backbone.history.navigate("session/new", { trigger: true });
   },
   // itemsIndex: function () {
   //   itemsCollection.fetch();
@@ -120,29 +120,37 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   shopNew: function (){
-    var shop = new Getsy.Models.Shop();
-    var newView = new Getsy.Views.ShopForm({
-      collection: shopsCollection,
-      model: shop
-    });
+    if (!Getsy.currentUser.isSignedIn()){
+      Backbone.history.navigate("session/new", {trigger:true})
+    }else{
+      var shop = new Getsy.Models.Shop();
+      var newView = new Getsy.Views.ShopForm({
+        collection: shopsCollection,
+        model: shop
+      });
 
-    this._swapView(newView);
-    this.$rootEl.prepend(
-      "<h1 class='form-title'>Register a new shop!</h1>"
-    );
+      this._swapView(newView);
+      this.$rootEl.prepend(
+        "<h1 class='form-title'>Register a new shop!</h1>"
+      );
+    }
   },
 
   shopEdit: function (id){
-    var shop = shopsCollection.getOrFetch(id);
-    var editView = new Getsy.Views.ShopForm({
-      collection: shopsCollection,
-      model: shop
-    });
+    if (!Getsy.currentUser.isSignedIn()){
+      Backbone.history.navigate("session/new", {trigger:true})
+    }else{
+      var shop = shopsCollection.getOrFetch(id);
+      var editView = new Getsy.Views.ShopForm({
+        collection: shopsCollection,
+        model: shop
+      });
 
-    this._swapView(editView)
-    this.$rootEl.prepend(
-      "<h1 class='form-title'>Edit Your Shop</h1>"
-    );
+      this._swapView(editView)
+      this.$rootEl.prepend(
+        "<h1 class='form-title'>Edit Your Shop</h1>"
+      );
+    }
   },
 
   itemShow: function (shopId, itemId) {
@@ -156,32 +164,41 @@ Getsy.Routers.Router = Backbone.Router.extend({
   },
 
   itemNew: function (shopId) {
-    var shop = shopsCollection.getOrFetch(shopId);
-    var item = new Getsy.Models.Item({shop_id: shopId});
+    if (!Getsy.currentUser.isSignedIn()){
+      Backbone.history.navigate("session/new", {trigger:true})
+    }else{
+      var shop = shopsCollection.getOrFetch(shopId);
+      var item = new Getsy.Models.Item({shop_id: shopId});
 
-    var newView = new Getsy.Views.ItemForm({
-      collection: shop.items(),
-      model: item
-    });
-    this._swapView(newView);
-    this.$rootEl.prepend(
-      "<h1 class='form-title'>Register Your Item</h1>"
-    );
+      var newView = new Getsy.Views.ItemForm({
+        collection: shop.items(),
+        model: item
+      });
+      this._swapView(newView);
+      this.$rootEl.prepend(
+        "<h1 class='form-title'>Register Your Item</h1>"
+      );
+    }
   },
 
   itemEdit: function (shopId, itemId) {
-    var shop = shopsCollection.getOrFetch(shopId);
-    var item = shopsCollection.getOrFetchItem(shopId, itemId)
 
-    var showView = new Getsy.Views.ItemForm({
-      collection: shop.items(),
-      model: item
-    });
+    if (!Getsy.currentUser.isSignedIn()){
+      Backbone.history.navigate("session/new", {trigger:true})
+    }else{
+      var shop = shopsCollection.getOrFetch(shopId);
+      var item = shopsCollection.getOrFetchItem(shopId, itemId)
 
-    this._swapView(showView);
-    this.$rootEl.prepend(
-      "<h1 class='form-title'>Edit Your Item</h1>"
-    );
+      var showView = new Getsy.Views.ItemForm({
+        collection: shop.items(),
+        model: item
+      });
+
+      this._swapView(showView);
+      this.$rootEl.prepend(
+        "<h1 class='form-title'>Edit Your Item</h1>"
+      );
+    }
   },
 
   _swapView: function (view) {
