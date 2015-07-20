@@ -208,8 +208,10 @@
   }
 
   .items-by-shop{
+    position: relative;
     float: left;
     width: 308px;
+    height: 310px;
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
@@ -230,11 +232,13 @@
   .items-by-shop img{
     width: 154px;
     height: 122px;
-
   }
 
-  .items-by-shop > .nav-link {
+  .items-by-shop .nav-link {
     color: #000;
+    position: absolute;
+    margin-top: 260px;
+    margin-left: 10px;
   }
 
 /*********** Misc ***********/

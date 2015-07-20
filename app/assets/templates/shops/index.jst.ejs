@@ -3,10 +3,10 @@
     <li>
       <ul class="items-by-shop group">
 
-        <% for(var i = 0; i < 4; i++){ %>
+        <% for(var i = 0; i < 4 && i <= shop.items().length -1; i++){ %>
           <li>
-            <a href="#shops/<%= shop.id %>/items/<%=shop.items().first().id%>">
-              <img src="<%=shop.items().first().escape('main_image_url') %>"
+            <a href="#shops/<%= shop.id %>/items/<%=shop.items().models[i].id%>">
+              <img src="<%=shop.items().models[i].escape('main_image_url') %>"
                 alt='image'>
                 <span class="mask"></span>
             </a>
@@ -15,13 +15,14 @@
           <!-- <li></li>
           <li></li>
           <li></li> -->
-        <li>
-          <a class="nav-link" href="/#shops/<%= shop.escape('id') %>">
-            <%= shop.escape('name') %>
-          </a>
-        </li>
+        <!-- <li>
 
+        </li> -->
+        <a class="nav-link" href="/#shops/<%= shop.escape('id') %>">
+          <%= shop.escape('name') %>
+        </a>
       </ul>
+
     </li>
   <% }); %>
 </ul>
