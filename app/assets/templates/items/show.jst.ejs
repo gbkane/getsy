@@ -1,11 +1,31 @@
-<h1> <%= item.escape('name') %></h1>
-<img src="<%= item.escape('main_image_url') %>"
-  alt="<%= item.escape('name') %>">
-<br>
-<text>Price: $<%= item.escape('price') %></text>
-<br>
-<p> <%= item.escape('description') %>
-<a class="nav-link"
-  href="/#shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
-  Edit Item...
-</a>
+
+
+<section class="item-show group">
+  <a class = "nav-link" href="/#shops/<%= item.escape('shop_id') %>">See all the items from this shop...</a>
+  <div class="group">
+    <section class="img-container">
+      <img src="<%= item.escape('main_image_url') %>"
+        alt="<%= item.escape('name') %>">
+    </section>
+
+    <section class="content-container">
+      <div>
+        <h1> <%= item.escape('name') %></h1>
+        <text class="price">$<%= item.escape('price') %></text>
+      </div>
+
+      <button class="add-to-cart">Add to Cart</button>
+    <br>
+
+    </section>
+  </div>
+  <section class="details">
+    <p><%= item.escape('description') %></p>
+
+
+    <a class="nav-link"
+      href="/#shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
+      Edit Item...
+    </a>
+  </section>
+</section>

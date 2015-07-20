@@ -32,9 +32,11 @@ Getsy.Views.UsersForm = Backbone.View.extend({
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate("#shops", { trigger: true });
       },
-      error: function(data){
-        alert("Form invalid. Let the user know what went wrong.");
-        console.log(data);
+      error: function(data, errors){
+      
+        alert(errors.responseText);
+        console.log(errors.responseText);
+
       }
     });
   }
