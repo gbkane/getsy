@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     resources :shops do
       resources :items
     end
-    resources :carts, only: [:show, :edit]
-    resources :orders, only: [:create, :edit, :destroy]
+    resources :carts, only: [:create, :show, :edit, :index] do
+      resources :orders, only: [:create, :edit, :destroy]
+    end
   end
 
   get "/auth/:provider/callback", to: "api/sessions#omniauth"

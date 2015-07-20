@@ -32,7 +32,7 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   removeOrder: function (event){
     var view = $(event.currentTarget);
     this.removeSubview('#orders', view);
-  }
+  },
 
   renderOrders: function () {
     this.model.orders().each(this.addOrder.bind(this));

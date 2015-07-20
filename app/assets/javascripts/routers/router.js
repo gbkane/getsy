@@ -5,6 +5,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
     usersCollection = new Getsy.Collections.Users();
     usersCollection.fetch();
     cartsCollection = new Getsy.Collections.Carts();
+    cart = new Getsy.Models.Cart ();
     cartsCollection.fetch();
 
   },
@@ -27,6 +28,15 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   splash: function (){
     var view = new Getsy.Views.Splash();
+    this._swapView(view);
+  },
+
+  cartShow: function (){
+    cart.fetch();
+    var view = new Getsy.Views.CartShow({
+      model: cart
+    });
+
     this._swapView(view);
   },
 
