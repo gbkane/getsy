@@ -36,5 +36,3 @@ Getsy.Collections.Carts = Backbone.Collection.extend({
   }
 
 });
-
-Getsy.Collections.Carts = new Getsy.Collections.Carts();

@@ -4,14 +4,17 @@ Getsy.Routers.Router = Backbone.Router.extend({
     shopsCollection = options.shops;
     usersCollection = new Getsy.Collections.Users();
     usersCollection.fetch();
-    // itemsCollection = options.items;
+    cartsCollection = new Getsy.Collections.Carts();
+    cartsCollection.fetch();
+
   },
 
   routes: {
-    // "items": "itemsIndex",
+
     "": "splash",
-    "users/new": "new",
-    "users/:id": "show",
+    "carts/:id": "cartShow",
+    "users/new": "userNew",
+    "users/:id": "userShow",
     "session/new": "signIn",
     "shops": "shopsIndex",
     "shops/new": "shopNew",
@@ -20,24 +23,14 @@ Getsy.Routers.Router = Backbone.Router.extend({
     "shops/:shop_id/items/new" : "itemNew",
     "shops/:shop_id/items/:id": "itemShow",
     "shops/:shop_id/items/:id/edit": "itemEdit"
-
   },
+
   splash: function (){
     var view = new Getsy.Views.Splash();
     this._swapView(view);
   },
 
-  // index: function(){
-  //     var callback = this.index.bind(this);
-  //     if (!this._requireSignedIn(callback)) { return; }
-  //
-  //     var indexView = new Getsy.Views.UsersIndex({
-  //       collection: usersCollection
-  //     });
-  //     this._swapView(indexView);
-  //   },
-
-    new: function(){
+  userNew: function(){
     if (!this._requireSignedOut()) { return; }
 
     var model = new usersCollection.model();
@@ -48,7 +41,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
     this._swapView(formView);
   },
 
-  show: function(id){
+  userShow: function(id){
     var callback = this.show.bind(this, id);
     if (!this._requireSignedIn(callback)) { return; }
 
@@ -91,14 +84,6 @@ Getsy.Routers.Router = Backbone.Router.extend({
   _goSignIn: function(){
     Backbone.history.navigate("session/new", { trigger: true });
   },
-  // itemsIndex: function () {
-  //   itemsCollection.fetch();
-  //   var indexView = new Getsy.Views.ItemsIndex({
-  //     collection: itemsCollection
-  //   });
-  //
-  //   this._swapView(indexView);
-  // },
 
   shopsIndex: function () {
 
