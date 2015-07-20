@@ -1,12 +1,13 @@
-Getsy.Views.ItemShow = Backbone.View.extend({
-  template: JST['items/show'],
+Getsy.Views.OrderThumb = Backbone.View.extend({
+  template: JST['orders/thumb'],
+
+  className: "order-thumbs",
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render)
+    this.listenTo(this.model, 'add sync', this.render)
   },
 
   render: function () {
-
     var content = this.template({
       item: this.model
     });
@@ -14,4 +15,4 @@ Getsy.Views.ItemShow = Backbone.View.extend({
 
     return this;
   }
-});
+})
