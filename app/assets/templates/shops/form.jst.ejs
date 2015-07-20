@@ -1,15 +1,16 @@
 
 
-  <label>Shop name:
-    <input type="text" name="name"
+<div class="shop">
+  <label>Shop name<br>
+    <input class="form-input-text" type="text" name="name"
       value="<%=shop.escape('name')%>">
   </label>
   <br><br>
 
-  <label>Description:
-    <textarea name="description">
+  <label>Description<br>
+    <textarea class="form-description" name="description">
       <%= shop.escape('description') %>
     </textarea>
   </label>
-  <br><br>
+</div>
   <button class="submit">Submit</button>

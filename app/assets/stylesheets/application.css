@@ -259,7 +259,7 @@
   }
 
   /*********** User Forms **********/
-  .user-form{
+  .user-form, .shops-form{
     width: 550px;
     margin: 40px auto;
     background: #eee;
@@ -267,7 +267,7 @@
     border-radius: 3px;
   }
 
-  h2.user-form-title {
+  h2.user-form-title, h1.form-title {
     padding: 10px;
     font-size: 24px;
     font-weight: 700;
@@ -275,24 +275,31 @@
     text-align: center;
   }
 
-  .user{
+  .user, .shop{
     width: 300px;
     margin: 40px auto;
   }
 
-  .user > label {
+  .user > label, .shop > label {
     font-size: 12px;
     font-weight: 300;
   }
 
-  .user-input-text {
+  .user-input-text, .form-input-text, .form-description {
     height: 30px;
     width: 300px;
     border-radius: 3px;
     font-size: 14px;
   }
 
-  .user > button.submit {
+  .form-description{
+    height: 150px;
+    border:none;
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+  }
+
+  .user > button.submit, .shops-form > .submit {
     margin: 10px auto;
   }
 
