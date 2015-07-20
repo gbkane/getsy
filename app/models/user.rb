@@ -27,6 +27,12 @@ class User < ActiveRecord::Base
     foreign_key: :owner_id,
     primary_key: :id
 
+  has_many :items, through: :shops
+
+  has_many :carts
+
+  has_many :orders, through: :carts
+
   attr_reader :password, :password_confirm
   after_initialize :ensure_session_token
   before_validation :ensure_session_token

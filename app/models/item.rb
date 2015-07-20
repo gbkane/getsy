@@ -16,5 +16,7 @@ class Item < ActiveRecord::Base
   validates :name, :qty, :price, presence: true
 
   belongs_to :shop
+  has_many :orders
+  
 
 end
