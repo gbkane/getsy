@@ -241,6 +241,20 @@
     margin-left: 10px;
   }
 
+  .items-by-shop .item-count{
+    position: absolute;
+    color: #aaa;
+    background: #fff;
+    padding: 3px;
+    top: -50px;
+    left: 200px;
+    text-decoration: none;
+  }
+  .items-by-shop .item-count:hover {
+    color: #000;
+  }
+
+
 /*********** Misc ***********/
   .radio:hover{
     cursor: pointer;
@@ -279,8 +293,6 @@
     margin: 40px auto;
     text-align: center;
   }
-
-
 
   .user, .shop, .item{
     width: 300px;
