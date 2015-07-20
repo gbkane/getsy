@@ -506,3 +506,48 @@
 .add-to-cart:active {
   background: #779539;
 }
+
+/*********** Cart ********/
+.cart-container {
+  width: 600px;
+  min-height: 300px;
+  background: #E4F3D9;
+  margin: 50px auto;
+  border-radius: 5px;
+  padding-bottom: 20px;
+
+}
+
+h1.cart {
+  text-align: center;
+  font-size:24px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+#orders {
+  background: #fff;
+  min-height: 200px;
+  border-radius: 3px;
+  margin: 0 20px;
+  padding: 20px;
+}
+
+button.checkout {
+  padding: 10px 60px;
+  border-radius: 3px;
+  color: #fff;
+  background: -webkit-linear-gradient(top, #b4d679 2%, #8dc035 8%, #82b809 58%, #82b809 95%, #7ab008);
+  border-color: #7ab008 #76a80d #779539;
+
+  margin: 20px auto 0;
+
+}
+
+button.checkout:hover {
+  opacity: 0.9;
+}
+
+button.checkout:active{
+  background: #779539;
+}

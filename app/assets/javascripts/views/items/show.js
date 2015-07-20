@@ -5,6 +5,10 @@ Getsy.Views.ItemShow = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render)
   },
 
+  events: {
+    "click .add-to-cart": "addToCart"
+  },
+
   render: function () {
 
     var content = this.template({
@@ -13,5 +17,10 @@ Getsy.Views.ItemShow = Backbone.View.extend({
     this.$el.html(content)
 
     return this;
+  },
+
+  addToCart: function (event){
+    event.preventDefault();
+
   }
 });
