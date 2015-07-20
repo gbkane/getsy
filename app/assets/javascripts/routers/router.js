@@ -163,7 +163,6 @@ Getsy.Routers.Router = Backbone.Router.extend({
       collection: shop.items(),
       model: item
     });
-
     this._swapView(newView);
     this.$rootEl.prepend(
       "<h1 class='form-title'>Register Your Item</h1>"
