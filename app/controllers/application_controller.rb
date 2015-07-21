@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :curret_cart
 
   private
 
@@ -28,5 +28,15 @@ class ApplicationController < ActionController::Base
 
   def require_signed_in!
     redirect_to new_session_url unless signed_in?
+  end
+
+  def curret_cart
+    if session[:cart_id]
+      cart = Cart.find(session[:cart_id])
+    else
+      cart = (signed_in? ? Cart.find_by({user_id: current_user.id}) : Cart.create!)
+      session[:cart_id] = cart.id
+    end
+    cart
   end
 end
