@@ -9,6 +9,11 @@ Getsy.Models.Shop = Backbone.Model.extend({
     return this._items
   },
 
+  orders: function() {
+    this._orders = this._orders || new Getsy.Collections.Orders([], {});
+    return this._orders;
+  },
+
   parse: function (response) {
 
     if (response.items) {

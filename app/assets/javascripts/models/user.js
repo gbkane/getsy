@@ -2,8 +2,8 @@ Getsy.Models.User = Backbone.Model.extend({
 
 urlRoot: "/api/users",
 
-  fullName: function(){
-    return this.escape("fname") + " " + this.escape("lname");
+  fullast_name: function(){
+    return this.escape("first_name") + " " + this.escape("last_name");
   },
 
   toJSON: function(){
@@ -63,10 +63,10 @@ Getsy.Models.CurrentUser = Getsy.Models.User.extend({
   fireSessionEvent: function(){
     if(this.isSignedIn()){
       this.trigger("signIn");
-      // console.log("currentUser is signed in!", this);
+      console.log("currentUser is signed in!", this);
     } else {
       this.trigger("signOut");
-      // console.log("currentUser is signed out!", this);
+      console.log("currentUser is signed out!", this);
     }
   }
 

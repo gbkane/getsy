@@ -6,8 +6,8 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
+#  first_name           :string           not null
+#  last_name           :string           not null
 #  sex             :string
 #  street          :string
 #  state           :string

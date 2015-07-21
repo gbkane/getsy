@@ -31,7 +31,7 @@
       <ul class="nav-right group">
         <li><a href="/#shops">Home</a></li>
         <li><a href="#users/<%= Getsy.currentUser.id %>">
-          <%= Getsy.currentUser.escape("fname") %>
+          <%= Getsy.currentUser.escape("first_name") %>
           </a>
         </li>
         <li>
@@ -45,12 +45,10 @@
         <li><a href="">Home</a></li>
         <li><a href="#session/new">Sign In</a></li>
         <li><a href="#users/new">Register</a></li>
-        <li><a href="#carts/1">Cart</a></li>
+        <li><a href="#cart">Cart <%= Getsy.currentCart.id %></a></li>
       </ul>
 
 
     <% } %>
-
-
 
 </div>

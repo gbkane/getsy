@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # u1 = User.create(email: 'gbkane@gmail.com', password: 'password',
-#   fname: 'Greg', lname: 'Kane', sex: 'M')
+#   first_name: 'Greg', last_name: 'Kane', sex: 'M')
 # u2 = User.create(email: 'guest@example.com', password: 'password',
-#   fname: 'Guest', lname: 'Guest', sex: 'O')
+#   first_name: 'Guest', last_name: 'Guest', sex: 'O')
 #
 # s1 = u1.shops.create(name: 'Cool Things Shop')
 # s2 = u1.shops.create(name: 'Ordinary Things Shop')
@@ -42,27 +42,27 @@
 #       main_image_url:  "https://thechive.files.wordpress.com/2011/10/want-need-cool-stuff-3.jpg",
 #       description: "For the lazy chef.")
 u1 = User.create(email: 'gbkane@gmail.com', password: 'password',
-  fname: 'Greg', lname: 'Kane', sex: 'M')
+  first_name: 'Greg', last_name: 'Kane', sex: 'M')
 u2 = User.create(email: 'guest@example.com', password: 'password',
-  fname: 'Guest', lname: 'Guest', sex: 'O')
+  first_name: 'Guest', last_name: 'Guest', sex: 'O')
 
 u3 = User.create(email: 'swanson@pawnee.gov', password: 'password',
-	fname: 'Ron', lname: 'Swanson', sex: 'M')
+	first_name: 'Ron', last_name: 'Swanson', sex: 'M')
 
 u4 = User.create(email: 'knope@pawnee.gov', password: 'password',
-	fname: 'Leslie', lname: 'Knope', sex: 'F')
+	first_name: 'Leslie', last_name: 'Knope', sex: 'F')
 
 u5 = User.create(email: 'wyatt@pawnee.gov', password: 'password',
-	fname: 'Ben', lname: 'Wyatt', sex: 'M')
+	first_name: 'Ben', last_name: 'Wyatt', sex: 'M')
 
 u6 = User.create(email: 'ludgate@pawnee.gov', password: 'password',
-	fname: 'April', lname: 'Ludgate', sex: 'F')
+	first_name: 'April', last_name: 'Ludgate', sex: 'F')
 
 u7 = User.create(email: 'karate@pawnee.gov', password: 'password',
-	fname: 'Johnny', lname: 'Karate', sex: 'M')
+	first_name: 'Johnny', last_name: 'Karate', sex: 'M')
 
 u8 = User.create(email: 'haverford@pawnee.gov', password: 'password',
-	fname: 'Tom', lname: 'Haverford', sex: 'M')
+	first_name: 'Tom', last_name: 'Haverford', sex: 'M')
 
 # s1 = u1.shops.create(name: "Rare Items")
 # s2 = u1.shops.create(name: "Ordinary Things Shop")

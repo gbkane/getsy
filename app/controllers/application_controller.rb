@@ -19,11 +19,14 @@ class ApplicationController < ActionController::Base
   def sign_in!(user)
     @current_user = user
     session[:token] = user.reset_session_token!
+
+    # current_cart.save!
   end
 
   def sign_out!
     current_user.try(:reset_token!)
     session[:token] = nil
+    session[:cart_id] = nil
   end
 
   def require_signed_in!
@@ -31,12 +34,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    if session[:cart_id]
-      cart = Cart.find(session[:cart_id])
-    else
-      cart = (signed_in? ? Cart.find_by({user_id: current_user.id}) : Cart.create)
+    # if session[:cart_id]
+    #   cart = Cart.find(session[:cart_id])
+    # else
+      cart = (signed_in? ? Cart.find_by({user_id: current_user.id}) : Cart.create!)
       session[:cart_id] = cart.id
-    end
+    # end
     cart
   end
 end

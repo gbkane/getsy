@@ -19,20 +19,20 @@ Getsy.Collections.Carts = Backbone.Collection.extend({
 
     return cart;
   },
-
-  getOrFetchOrder: function (cartId, id) {
-
-    var cart = this.get(cartId);
-    var order;
-
-    if(cart){
-      order = cart.orders().getOrFetch(id);
-    }else{
-      order = new Getsy.Models.order({id: id});
-      order.fetch();
-    }
-
-    return order;
-  }
+  //
+  // getOrFetchOrder: function (cartId, id) {
+  //
+  //   var cart = this.get(cartId);
+  //   var order;
+  //
+  //   if(cart){
+  //     order = cart.orders().getOrFetch(id);
+  //   }else{
+  //     order = new Getsy.Models.order({id: id});
+  //     order.fetch();
+  //   }
+  //
+  //   return order;
+  // }
 
 });

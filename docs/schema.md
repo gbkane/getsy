@@ -49,7 +49,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 shop_id     | integer   | not null foreign key (references shop)
-item_id     | listing   | foreign key (references item_for_sale)
+item_id     | item   | foreign key (references item_for_sale)
 urls        | text      | not null
 
 

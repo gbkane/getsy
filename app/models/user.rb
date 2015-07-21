@@ -6,8 +6,8 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
+#  first_name           :string           not null
+#  last_name           :string           not null
 #  sex             :string
 #  street          :string
 #  state           :string
@@ -17,7 +17,7 @@
 #
 
 class User < ActiveRecord::Base
-  validates :email, :session_token, :fname, :lname, presence: true
+  validates :email, :session_token, :first_name, :last_name, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, uniqueness: true
   # validate :confirm_password
