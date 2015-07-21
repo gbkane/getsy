@@ -127,8 +127,12 @@
 
   input.text-search {
     background: #fff;
-    height: 35px;
+    height: 33px;
     width: 200px;
+    border:none;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     font-size: 14px;
@@ -141,7 +145,6 @@
 
   .nav-right{
     float: right;
-
   }
 
   .getsy {
@@ -328,15 +331,23 @@
     margin: 40px auto;
   }
 
-  .twitter {
+  .twitter, .guest-sign-in {
     padding: 10px;
     width: 150px;
     color: blue;
     text-align: center;
     margin: auto;
+    cursor: pointer;
   }
 
-  .twitter:hover {
+  .guest-sign-in {
+    padding: 10px;
+    width: 380px;
+    background: #fff;
+    border-radius: 3px;
+  }
+
+  .twitter:hover, .guest-sign-in:hover {
     text-decoration: underline;
   }
 

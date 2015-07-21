@@ -8,7 +8,8 @@ Getsy.Views.SignIn = Backbone.View.extend({
   className: 'user-form',
 
   events: {
-    "submit form": "submit"
+    "submit form": "submit",
+    "click .guest-sign-in": "signInAsGuest"
   },
 
   template: JST['shared/sign_in'],
@@ -30,6 +31,14 @@ Getsy.Views.SignIn = Backbone.View.extend({
       error: function(){
         alert("Wrong username/password combination. Please try again.");
       }
+    });
+  },
+
+  signInAsGuest: function (event) {
+    event.preventDefault();
+    Getsy.currentUser.signIn({
+      email: 'guest@example.com',
+      password: 'password'
     });
   },
 
