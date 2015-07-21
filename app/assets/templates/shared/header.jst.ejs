@@ -3,7 +3,11 @@
 
     <ul class="nav-left group">
       <li>
-        <a class="getsy" href="#shops">Getsy</a>
+        <% if (Getsy.currentUser.isSignedIn()){ %>
+          <a class="getsy" href="#shops">Getsy</a>
+        <% }else{ %>
+          <a class="getsy" href="">Getsy</a>
+        <% } %>
       </li>
       <li>
         <input class="text-search" type="text" name="searchcontent" value=""
@@ -38,7 +42,7 @@
 
     <% } else { %>
       <ul class="nav-right group">
-        <li><a href="/#shops">Home</a></li>
+        <li><a href="">Home</a></li>
         <li><a href="#session/new">Sign In</a></li>
         <li><a href="#users/new">Register</a></li>
         <li><a href="#carts/1">Cart</a></li>

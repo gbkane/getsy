@@ -31,8 +31,14 @@ Getsy.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  cartShow: function (){
-    cart.fetch();
+  cartShow: function (id){
+    debugger
+    var cart = cartsCollection.getOrFetch(id);
+    cart.save({
+      errors: function (data, errors){
+        console.log(errors);
+      }
+    })
     var view = new Getsy.Views.CartShow({
       model: cart
     });
