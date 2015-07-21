@@ -6,16 +6,16 @@ class Cart < ActiveRecord::Base
   def add(id)
     order = self.orders.find_by({item_id: id})
     if order
-      order.amount += 1
+      order.total += 1
       order.save!
     else
       orders.create!({ item_id: id})
     end
   end
 
-  def amount
+  def total
     num = 0
-    self.orders.map { |order| num += order.amount }
+    self.orders.map { |order| num += order.total }
     num
   end
 end
