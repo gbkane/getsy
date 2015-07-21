@@ -12,8 +12,8 @@ module Api
       # else
       #   render json: "Oops, Your cart tipped over!"
       # end
-      current_cart.add(params[:data][:item_id].to_i)
-      render json: ['success']
+
+      
     end
 
     def show
