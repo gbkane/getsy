@@ -17,6 +17,7 @@ Getsy.Models.CurrentUser = Getsy.Models.User.extend({
   url: "/api/session",
 
   initialize: function(options){
+    debugger
     this.listenTo(this, "change", this.fireSessionEvent);
   },
 
@@ -25,6 +26,7 @@ Getsy.Models.CurrentUser = Getsy.Models.User.extend({
   },
 
   signIn: function(options){
+      
     var model = this;
     var credentials = {
       "user[email]": options.email,
@@ -37,10 +39,12 @@ Getsy.Models.CurrentUser = Getsy.Models.User.extend({
       data: credentials,
       dataType: "json",
       success: function(data){
+
         model.set(data);
         options.success && options.success();
       },
       error: function(){
+
         options.error && options.error();
       }
     });

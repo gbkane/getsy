@@ -37,8 +37,8 @@ class ApplicationController < ActionController::Base
     # if session[:cart_id]
     #   cart = Cart.find(session[:cart_id])
     # else
-      cart = (signed_in? ? Cart.find_by({user_id: current_user.id}) : Cart.create!)
-      session[:cart_id] = cart.id
+      cart = current_user.try(:cart) || Cart.create!
+      # session[:cart_id] = cart.id
     # end
     cart
   end

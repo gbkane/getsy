@@ -1,7 +1,9 @@
 class Api::SessionsController < ApplicationController
 
   def show
+    
     if current_user
+
       render :show
     else
       render json: {}
@@ -30,7 +32,9 @@ class Api::SessionsController < ApplicationController
     # do something with the auth_hash
     user = User.find_or_create_by_auth_hash(auth_hash)
     sign_in!(user)
+    # render json: user
     redirect_to root_url
+    # redirect_to "#shops"
   end
 
   protected

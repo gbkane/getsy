@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
             uid: auth_hash[:uid],
             first_name: auth_hash[:info][:name].split.first,
             last_name: auth_hash[:info][:name].split.last,
-            email: auth_hash[:info][:nickname], #bad solution
+            email: auth_hash[:info][:nickname], #twitter will not provide email
             password: SecureRandom::urlsafe_base64)
     end
 
@@ -77,5 +77,6 @@ class User < ActiveRecord::Base
   def reset_session_token!
     self.session_token = SecureRandom::urlsafe_base64
     self.save!
+    self.session_token
   end
 end

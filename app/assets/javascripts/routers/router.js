@@ -2,12 +2,14 @@ Getsy.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     shopsCollection = options.shops;
+
     usersCollection = new Getsy.Collections.Users();
     usersCollection.fetch();
-    cartsCollection = new Getsy.Collections.Carts();
-    cart = new Getsy.Models.Cart ();
-    cartsCollection.fetch();
 
+    // cartsCollection = new Getsy.Collections.Carts();
+    cart = new Getsy.Models.Cart ();
+    cart.fetch();
+    // cartsCollection.fetch();
   },
 
   routes: {

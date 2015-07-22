@@ -45,7 +45,7 @@ Getsy.Views.UsersForm = Backbone.View.extend({
       error: function(data, errors){
 
         alert(errors.responseText);
-        
+
       }
     });
   }

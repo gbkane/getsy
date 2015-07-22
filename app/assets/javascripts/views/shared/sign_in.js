@@ -9,7 +9,7 @@ Getsy.Views.SignIn = Backbone.View.extend({
 
   events: {
     "submit form": "submit",
-    "click .guest-sign-in": "signInAsGuest"
+    "click .guest-sign-in": "signInAsGuest",
   },
 
   template: JST['shared/sign_in'],
