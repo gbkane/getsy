@@ -14,12 +14,12 @@ Getsy.Models.Order = Backbone.Model.extend({
     return this._item
   },
 
-  // parse: function(data) {
-  //   if(data.item) {
-  //     var itemParams = this.item().parse(data.item);
-  //     this.item().set(itemParams);
-  //     delete data.item;
-  //   }
-  //   return data;
-  // }
+  parse: function(data) {
+    if(data.item) {
+      var itemParams = this.item().parse(data.item);
+      this.item().set(itemParams);
+      delete data.item;
+    }
+    return data;
+  }
 })

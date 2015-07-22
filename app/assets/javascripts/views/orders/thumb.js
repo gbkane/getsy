@@ -1,7 +1,7 @@
 Getsy.Views.OrderThumb = Backbone.View.extend({
   template: JST['orders/thumb'],
 
-  className: "order-thumbs",
+  className: "order-thumbs group",
 
   initialize: function () {
     this.listenTo(this.model, 'add sync remove', this.render)
@@ -9,10 +9,8 @@ Getsy.Views.OrderThumb = Backbone.View.extend({
 
   render: function () {
 
-    var itemId = this.model.get('item_id');
-    var item = Getsy.cartItems.get(itemId);
     var content = this.template({
-      item: item
+      order: this.model
     });
     this.$el.html(content)
 

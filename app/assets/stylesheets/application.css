@@ -562,3 +562,47 @@ button.checkout:hover {
 button.checkout:active{
   background: #779539;
 }
+
+.cart-thumb {
+  height: 60px;
+  max-width: 80px;
+}
+
+.cart-items {
+  position: relative;
+  float: left;
+}
+
+
+
+.cart-features {
+  float: right;
+}
+
+.order-thumbs {
+  padding: 20px 0 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.order-thumbs:first-child {
+  padding: 0 0 5px 0;
+}
+
+.remove-item {
+  padding: 5px 0;
+  color: #aaa;
+  margin-top: 50px;
+}
+
+.remove-item:hover {
+  color: #f00;
+  cursor: pointer;
+}
+
+.cart-item-name {
+  position: absolute;
+  font-weight: 700;
+  left: 140px;
+  top: 20px;
+  width: 200px;
+}

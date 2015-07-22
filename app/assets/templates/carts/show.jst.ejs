@@ -1,7 +1,11 @@
 <section class="cart-container">
   <h1 class="cart">Cart</h1>
 
-  <section id="orders">Your Cart is Empty</section>
+  <section id="orders">
+    <% if(Getsy.currentCart.orders().length === 0){ %>
+      Your Cart is Empty
+    <% } %>
+  </section>
 
   <button class="checkout">Checkout</button>
 </section>
