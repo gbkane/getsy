@@ -19,8 +19,6 @@ class ApplicationController < ActionController::Base
   def sign_in!(user)
     @current_user = user
     session[:token] = user.reset_session_token!
-
-    # current_cart.save!
   end
 
   def sign_out!
@@ -34,12 +32,13 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    # if session[:cart_id]
-    #   cart = Cart.find(session[:cart_id])
-    # else
-      cart = current_user.try(:cart) || Cart.create!
-      # session[:cart_id] = cart.id
-    # end
+    if session[:cart_id]
+      cart = Cart.find(session[:cart_id])
+    else
+      cart = Cart.create!
+      session[:cart_id] = cart.id
+    end
+
     cart
   end
 end

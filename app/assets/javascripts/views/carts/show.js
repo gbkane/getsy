@@ -1,13 +1,13 @@
 Getsy.Views.CartShow = Backbone.CompositeView.extend({
   template: JST['carts/show'],
-
-  events: {
-    "click .remove-order": "removeOrder"
-  },
-
+  //
+  // events: {
+  //   "click .remove-order": "removeOrder"
+  // },
+  //
   initialize: function () {
     this.collection = this.model.orders()
-    this.listenTo(this.model, 'sync', this.render)
+    this.listenTo(this.model, 'sync refresh', this.render)
     this.listenTo(this.collection, 'add', this.addOrder);
     this.listenTo(this.collection, 'remove', this.removeOrder);
   },
@@ -24,6 +24,7 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   addOrder: function (order){
 
     var view = new Getsy.Views.OrderThumb({
+      collection: Getsy.cartItems,
       model: order
     });
     this.addSubview('#orders', view);
@@ -38,4 +39,5 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
     this.model.orders().each(this.addOrder.bind(this));
   }
 
-})
+
+});

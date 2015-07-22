@@ -4,9 +4,10 @@ window.Getsy = {
   Views: {},
   Routers: {},
   initialize: function() {
-    
+
     this.currentUser = new Getsy.Models.CurrentUser();
     this.currentUser.fetch();
+
 
     this.currentCart = new Getsy.Models.Cart({currentUser: this.currentUser});
     this.currentCart.fetch();

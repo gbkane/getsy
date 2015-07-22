@@ -1,7 +1,7 @@
 Getsy.Collections.Orders = Backbone.Collection.extend({
-  // initialize: function (models, options) {
-  //   this.cart = options.cart
-  // },
+  initialize: function (models, options) {
+    this.cart = options.cart
+  },
   //
   // url: function () {
   //   return 'api/carts/'+ this.get('cart_id') + '/orders'
@@ -29,6 +29,8 @@ Getsy.Collections.Orders = Backbone.Collection.extend({
   url: function () {
     return 'api/carts/'+ this.get('cart_id') + '/orders'
   },
-  model: Getsy.Models.Order
+  model: Getsy.Models.Order,
+
+//Add parse function to remove item from order
 
 });

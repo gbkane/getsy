@@ -75,50 +75,50 @@ s7 = u7.shops.create(name: "Johnny Karate's Super Amazing Store.", description: 
 
 
 
-i30 = s3.items.create(name: "Very Good Chair", price: 100, qty: 5,
+i30 = s3.items.create(name: "Very Good Chair", price: 100, qty: 1,
       main_image_url: "http://finewoodworker.com/images/gallery/classic-rocker-side_large.jpg",
       description: "It is made from wood that I chopped down.  It is a good chair.  It rocks.")
 i31 = s3.items.create(name: "Very Good Canoe", price: 500, qty: 1,
       main_image_url: "http://versporttvonline.com/wp-content/uploads/balsa-wood-boat-plans-easy-diy-woodworking-projects-step-by-step-20140909104442-540eda1abc7d1.jpg",
       description: "Good for fishing, which is relaxing.")
-i32 = s3.items.create(name: "Whiskey Barrel", price: 83, qty: 100,
+i32 = s3.items.create(name: "Whiskey Barrel", price: 83, qty: 1,
       main_image_url: "http://www.lexingtoncontainercompany.com/publishImages/Wood-Barrels~~element61.jpg",
       description: "Oak barrels for aging whiskey. No, there is no whisky in it, but there should be.")
-i33 = s3.items.create(name: "Wooden Bench", price: 300, qty: 2,
+i33 = s3.items.create(name: "Wooden Bench", price: 300, qty: 1,
       main_image_url: "http://homeinteriorsdesigns.info/wp-content/uploads/2014/11/wood-outdoor-furniture-plans.jpg",
       description: "Two seats with separation and table for beverage, as long as that beverage is not skim milk.  Because there are only
 	  two things that I hate: liers and skim milk, which is water that is lying about being milk.")
-i34 = s3.items.create(name: "Emojis", price: 149 , qty: 5,
+i34 = s3.items.create(name: "Emojis", price: 149 , qty: 1,
       main_image_url: "http://www.ew.com/sites/default/files/i/2014/11/13/Nick-Offerman.jpg",
       description: "These are just silly.")
 i35 = s3.items.create(name: "Log Cabin", price: 20000, qty: 1,
       main_image_url: "http://tinyhousetalk.com/wp-content/uploads/tiny-log-cabin-ski-hut-1.jpg",
       description: "This is mine, but I will build you one of equal quality in one week.")
 
-i40 = s7.items.create(name: "Johnny Karate T-shirt", price: 15, qty: 6,
+i40 = s7.items.create(name: "Johnny Karate T-shirt", price: 15, qty: 1,
       main_image_url: "https://d1sb2vhc1h1lwk.cloudfront.net/designs/135386/T-Shirt/m/0195c3/display.jpg",
       description: "Get super awesomely excited when you where the awesome t-shirt!")
-i71 = s7.items.create(name: "Kimono", price: 47, qty: 88,
+i71 = s7.items.create(name: "Kimono", price: 47, qty: 1,
       main_image_url: "http://www.kwon-danrho.cz/pool/vzor/products/clim_thumb_xxl_kimono-danrho-dojoliine-karategi-cerne-1.jpg",
       description: "Get ready to kick some serious butt with this super awesome kimono!")
-i72 = s7.items.create(name: "Guitar", price: 200, qty: 4,
+i72 = s7.items.create(name: "Guitar", price: 200, qty: 1,
       main_image_url: "http://dannycenter.org/Resources/Pictures/Accoustic-Guitar.jpg",
       description: "Relax after kicking bad-guy butt with a song session on this guitar, just like Johnny Karate does!")
-i73 = s7.items.create(name: "Burt Macklin Sunglasses", price: 34, qty: 9,
+i73 = s7.items.create(name: "Burt Macklin Sunglasses", price: 34, qty: 1,
       main_image_url: "https://cdna.lystit.com/photos/2013/04/22/tom-ford-rose-gold-brown-adrian-aviator-sunglasses-product-1-7995826-539737166_large_flex.jpeg",
       description: "Become a true detective worthy of the FBI with these Burt Macklin shades.")
 
-i50 = s5.items.create(name: "Cones of Dunshire T", price: 25, qty: 500,
+i50 = s5.items.create(name: "Cones of Dunshire T", price: 25, qty: 1,
       main_image_url: "https://img1.etsystatic.com/061/1/9230794/il_570xN.764846961_63sx.jpg",
       description: "Let everyone know how cool you are with this Cones of Dunshire T-shirt!")
-i51 = s5.items.create(name: "Cones of Dunshire Board Game", price: 65, qty: 500,
+i51 = s5.items.create(name: "Cones of Dunshire Board Game", price: 65, qty: 1,
       main_image_url: "https://31.media.tumblr.com/2c2253daebd286c04c0d2b68d206ef00/tumblr_inline_nc64nqs2rz1qzuc5s.jpg",
       description: "Interactive game that you and your friends will love. Spend hours together in the comfort of your parent's
 	  basement.  Who will be the champion of the cones?")
-i52 = s5.items.create(name: "Easy Scoring Add-on", price: 34, qty: 500,
+i52 = s5.items.create(name: "Easy Scoring Add-on", price: 34, qty: 1,
       main_image_url: "http://freewallpaperdownloads.net/wp-content/uploads/2014/07/abacus-computer.jpg",
       description: "Keep your game running efficiently with this abacus!  Now anyone can do math.")
-i53 = s5.items.create(name: "Colassal Cones", price: 29, qty: 500,
+i53 = s5.items.create(name: "Colassal Cones", price: 29, qty: 1,
       main_image_url: "http://www.cephalofair.com/wp-content/uploads/2014/06/beginnings.jpg",
       description: "Up your game with these colassal cones. The fun will be that much bigger.")
 

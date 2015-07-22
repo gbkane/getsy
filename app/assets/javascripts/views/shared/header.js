@@ -2,6 +2,7 @@ Getsy.Views.Header = Backbone.View.extend({
 
   initialize: function(options){
     this.listenTo(Getsy.currentUser, "signIn signOut", this.render);
+    this.listenTo(Getsy.currentCart, 'sync', this.render);
     this.render();
   },
 

@@ -4,12 +4,15 @@ Getsy.Views.OrderThumb = Backbone.View.extend({
   className: "order-thumbs",
 
   initialize: function () {
-    this.listenTo(this.model, 'add sync', this.render)
+    this.listenTo(this.model, 'add sync remove', this.render)
   },
 
   render: function () {
+
+    var itemId = this.model.get('item_id');
+    var item = Getsy.cartItems.get(itemId);
     var content = this.template({
-      item: this.model
+      item: item
     });
     this.$el.html(content)
 
