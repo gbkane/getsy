@@ -43,7 +43,7 @@ i32 = s3.items.create(name: "Whiskey Barrel", price: 83, qty: 1,
       main_image_url: "http://www.lexingtoncontainercompany.com/publishImages/Wood-Barrels~~element61.jpg",
       description: "Oak barrels for aging whiskey. No, there is no whisky in it, but there should be.")
 i33 = s3.items.create(name: "Wooden Bench", price: 300, qty: 1,
-      main_image_url: "http://homeinteriorsdesigns.info/wp-content/uploads/2014/11/wood-outdoor-furniture-plans.jpg",
+      main_image_url: "http://rilane.com/wp-content/uploads/2014/07/10-diy-garden-bench.jpg",
       description: "Two seats with separation and table for beverage, as long as that beverage is not skim milk.  Because there are only
 	  two things that I hate: liers and skim milk, which is water that is lying about being milk.")
 i34 = s3.items.create(name: "Emojis", price: 149 , qty: 1,
@@ -74,7 +74,7 @@ i51 = s5.items.create(name: "Cones of Dunshire Board Game", price: 65, qty: 1,
       description: "Interactive game that you and your friends will love. Spend hours together in the comfort of your parent's
 	  basement.  Who will be the champion of the cones?")
 i52 = s5.items.create(name: "Easy Scoring Add-on", price: 34, qty: 1,
-      main_image_url: "http://freewallpaperdownloads.net/wp-content/uploads/2014/07/abacus-computer.jpg",
+      main_image_url: "http://willoid.com/wp-content/uploads/2014/06/n52359cfca0987.jpg",
       description: "Keep your game running efficiently with this abacus!  Now anyone can do math.")
 i53 = s5.items.create(name: "Colassal Cones", price: 29, qty: 1,
       main_image_url: "http://www.cephalofair.com/wp-content/uploads/2014/06/beginnings.jpg",
