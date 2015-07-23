@@ -20,9 +20,13 @@ Getsy.Views.ItemShow = Backbone.View.extend({
   },
 
   addToCart: function (event){
-    // event.preventDefault();
-  
+    event.preventDefault();
+    
     Getsy.currentCart.addOrder(this.model)
+    Backbone.history.navigate(
+      "#carts/"+ Getsy.currentCart.id,
+      {trigger: true}
+    );
     //want to add item to cart view
 
   }

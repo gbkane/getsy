@@ -10,7 +10,7 @@ Getsy.Models.Order = Backbone.Model.extend({
   },
 
   item: function() {
-    this._item = this._item || new Getsy.Models.Item({}, {});
+    this._item = this._item || new Getsy.Models.Item();
     return this._item
   },
 

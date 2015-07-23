@@ -6,17 +6,18 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-debugger
+
     this.collection = this.model.orders()
 
     this.listenTo(this.model, 'sync', this.render)
     this.listenTo(this.collection, 'add', this.addOrder);
-    this.listenTo(this.collection, 'remove', this.removeOrder);
+    this.listenToOnce(this.collection, 'remove', this.removeOrder);
   },
 
   render: function () {
+
     var content = this.template({
-      order: this.model
+      cart: this.model
     });
     this.$el.html(content)
     this.renderOrders();
@@ -32,15 +33,42 @@ debugger
   },
 
   removeOrder: function (event){
-    debugger
+    console.log('remove order');
+
     var view = $(event.currentTarget);
+    var orderViews = $('.order');
+    var that = this;
+    var orderId = view.data('order-id')
+
+    // this.removeSubiew('#orders', orderViews.first());
+    orderViews.first().remove();
+    var order = Getsy.currentCart.orders().get(orderId);
+    if(order){
+      order.destroy({
+        success: function () {
+          that.render();
+        }
+      });
+    }
+    // orderViews.forEach(function (orderView){
+    //   debugger
+    //   if ( orderId === orderView.data('order-id')){
+    //     that.removeSubiew('#orders', orderView);
+    //     var order = Getsy.currentCart.orders().get(orderId);
+    //     order.destroy({
+    //       success: function () {
+    //         that.render();
+    //       }
+    //     });
+    //   }
+    // })
     var orderId = view.data('order-id');
     // var order = this.collection.get(orderId);
     // order.destroy();
 
-    var order = Getsy.currentCart.orders().get(orderId);
+
       if(order){
-        order.destroy();
+
       }
     this.removeSubview('#orders', view);
   },

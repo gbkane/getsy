@@ -1,10 +1,11 @@
+<div class="order" data-order-id="<%= order.id %>">
+  <ul class="cart-items">
+    <li><h5 class="cart-item-name"> <%= order.get('name') %> </h5></li>
+    <li><img class="cart-thumb" src="<%= order.get('main_image_url') %>" alt="<%= order.get('name') %>"></li>
+  </ul>
 
-<ul class="cart-items">
-  <li><h5 class="cart-item-name"> <%= order.get('name') %> </h5></li>
-  <li><img class="cart-thumb" src="<%= order.get('main_image_url') %>" alt="<%= order.get('name') %>"></li>
-</ul>
-
-<ul class="cart-features">
-  <li class="price">$<%= order.get('price') %> USD</li>
-  <li class="remove-item" data-order-id="<%= order.id %>">Remove</li>
-</ul>
+  <ul class="cart-features">
+    <li class="price">$<%= order.get('price') %> USD</li>
+    <li class="remove-item" data-order-id="<%= order.id %>">Remove</li>
+  </ul>
+</div>

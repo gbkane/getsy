@@ -8,12 +8,11 @@ Getsy.Views.OrderThumb = Backbone.View.extend({
   },
 
   render: function () {
-
     var content = this.template({
       order: this.model
     });
     this.$el.html(content)
-    
+
     return this;
   }
 })
