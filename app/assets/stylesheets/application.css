@@ -68,7 +68,7 @@
   }
   /************ Buttons ***********/
 
-  button:hover {
+  button:hover, .browse:hover {
     cursor: pointer;
     opacity: 0.9;
   }
@@ -572,8 +572,6 @@ button.checkout:active{
   position: relative;
   float: left;
 }
-
-
 
 .cart-features {
   float: right;

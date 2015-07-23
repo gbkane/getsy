@@ -11,6 +11,9 @@ module Api
     end
 
     def destroy
+      @order = Order.find(params[:id])
+      @order.destroy
+      render json: ['success']
     end
   end
 end
