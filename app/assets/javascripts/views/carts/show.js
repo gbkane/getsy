@@ -2,7 +2,8 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   template: JST['carts/show'],
 
   events: {
-    "click .remove-item": "removeOrder"
+    "click .remove-item": "removeOrder",
+    "click .checkout": "checkout"
   },
 
   initialize: function () {
@@ -40,14 +41,20 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
     var that = this;
     var orderId = view.data('order-id')
 
+
+
+    // this.removeSubiew('#orders', orderViews.first());
     orderViews.first().remove();
     var order = Getsy.currentCart.orders().get(orderId);
     var total = Getsy.currentCart.get('total');
 
+    //   total -= order.get('price');
+    //
+    // Getsy.currentCart.set({total: total});
     if(order){
       total -= order.get('price');
-      Getsy.currentCart.set({total: total});
-      
+
+    Getsy.currentCart.set({total: total});
       order.destroy({
         success: function () {
           that.render();
@@ -68,6 +75,10 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
     })
     this.model.set({total: total});
 
+  },
+
+  checkout: function () {
+    Backbone.history.navigate("#checkout", {trigger:true})
   }
 
 

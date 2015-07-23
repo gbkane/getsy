@@ -9,6 +9,14 @@ Getsy.Models.Cart = Backbone.Model.extend({
     return this._orders
   },
 
+  addOrder: function(item) {
+
+    var order;// = this.findOrder(item.get('id'));
+    debugger
+    order = new Getsy.Models.Order({item: item });
+    order.save({ data: { item_id: item.get('id') } });
+  },
+
   parse: function (response) {
 
     if (response.orders) {
@@ -17,32 +25,6 @@ Getsy.Models.Cart = Backbone.Model.extend({
     }
 
     return response;
-  },
-
-  addOrder: function(item) {
-
-    var order;// = this.findOrder(item.get('id'));
-
-    order = new Getsy.Models.Order({item: item });
-    order.save({ data: { item_id: item.get('id') } });
-
-    // debugger
-    // if (Getsy.currentCart.orders().models > 0){
-    //
-    // // }else{
-    //   Getsy.currentCart.orders().models.forEach (function (existingOrder){
-    //     if(item.id === existingOrder.get('item_id')){
-    //       existingOrder.set('num_units', existingOrder.get('num_units') + 1);
-    //       existingOrder.save()
-    //     }else{
-    //       order = new Getsy.Models.Order({ total: 1, item: item });
-    //       order.save({ data: { item_id: item.get('id') } });
-    //     }
-    //   });
-
-    // this.save({},{});
-
-
   }
 
 });

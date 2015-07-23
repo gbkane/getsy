@@ -6,7 +6,9 @@ module Api
     end
 
     def update
-      current_cart.add(params[:data][:item_id].to_i)
+      @order = Order.find(params[:id])
+      @order.update(order_params)
+      # current_cart.add(params[:data][:item_id].to_i)
       render json: ['success']
     end
 
@@ -15,5 +17,11 @@ module Api
       @order.destroy
       render json: ['success']
     end
+
+    private
+    def order_params
+      params.require(:order).permit(:num_units)
+    end
+
   end
 end

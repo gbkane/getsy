@@ -13,6 +13,7 @@ Getsy.Routers.Router = Backbone.Router.extend({
   routes: {
 
     "": "splash",
+    "checkout": "completedCheckout",
     "carts/:id": "cartShow",
     "users/new": "userNew",
     "users/:id": "userShow",
@@ -28,6 +29,15 @@ Getsy.Routers.Router = Backbone.Router.extend({
 
   splash: function (){
     var view = new Getsy.Views.Splash();
+    this._swapView(view);
+  },
+
+  completedCheckout: function (){
+    Getsy.currentCart.fetch();
+    var view = new Getsy.Views.CompletedCheckout({
+      model: Getsy.currentCart
+    });
+
     this._swapView(view);
   },
 
