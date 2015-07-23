@@ -3,7 +3,7 @@
 
   <section id="orders">
     <% if(Getsy.currentCart.orders().length === 0){ %>
-      Your Cart is Empty
+      <h2 class="empty-cart">Your Cart is Empty!</h2>
     <% }else{ %>
     <h4 class="cart-total">Total: $<%= Getsy.currentCart.get('total').toFixed(2) %></h4>
     <% } %>

@@ -3,6 +3,10 @@ Getsy.Views.ShopsIndex = Backbone.View.extend({
 
   className: 'shops-index',
 
+  events: {
+    "click .add-shop": "addShop"
+  },
+
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
   },
@@ -14,5 +18,9 @@ Getsy.Views.ShopsIndex = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  addShop: function () {
+    Backbone.history.navigate("#shops/new", {trigger:true});
   }
 })

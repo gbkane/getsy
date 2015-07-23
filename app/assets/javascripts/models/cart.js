@@ -10,9 +10,8 @@ Getsy.Models.Cart = Backbone.Model.extend({
   },
 
   addOrder: function(item) {
-
     var order;// = this.findOrder(item.get('id'));
-    debugger
+
     order = new Getsy.Models.Order({item: item });
     order.save({ data: { item_id: item.get('id') } });
   },
