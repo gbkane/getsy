@@ -537,11 +537,12 @@ h1.cart {
 }
 
 #orders {
+  position: relative;
   background: #fff;
   min-height: 200px;
   border-radius: 3px;
   margin: 0 20px;
-  padding: 20px;
+  padding: 20px 20px 60px 20px;
 }
 
 button.checkout {
@@ -603,4 +604,11 @@ button.checkout:active{
   left: 140px;
   top: 20px;
   width: 200px;
+}
+
+.cart-total {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
 }

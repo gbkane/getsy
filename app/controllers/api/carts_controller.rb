@@ -18,7 +18,7 @@ module Api
     def update
 
       @cart = Cart.find(params[:id])
-      if @cart.save
+      if @cart.update(cart_params)
         render json: @cart
       else
         render json: @cart.errors.full_messages
@@ -34,5 +34,10 @@ module Api
     def destroy
     end
 
+    private
+
+    def cart_params
+      params.require(:cart).permit(:total)
+    end
   end
 end

@@ -14,6 +14,10 @@ Getsy.Models.Order = Backbone.Model.extend({
     return this._item
   },
 
+  handleQty: function () {
+
+  },
+
   parse: function(data) {
     if(data.item) {
       var itemParams = this.item().parse(data.item);

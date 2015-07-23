@@ -27,15 +27,15 @@ Getsy.Collections.Items = Backbone.Collection.extend({
     return item;
   },
 
-  subtotal: function () {
-    var total = 0;
-
-    this.each( function(model) {
-      total += model.total();
-    })
-
-    return total.toFixed(2);
-  }
+  // subtotal: function () {
+  //   var total = 0;
+  //
+  //   this.each( function(model) {
+  //     total += model.total();
+  //   })
+  //
+  //   return total.toFixed(2);
+  // }
 
 });
 

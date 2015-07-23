@@ -4,22 +4,22 @@ Getsy.Models.Item = Backbone.Model.extend({
   },
 
 //this probably belongs somewhere else
-  defaults : {
-    'price': 1,
-    'qty': 0,
-    'total': 0
-  },
-
-  total: function () {
-    var total = this.get('price') * this.get('qty')
-    this.set('total', total);
-    return total;
-  },
-
-  quantity: function ( type ) {
-    var qty = this.get('qty');
-    this.set('qty', (type === 'increase' ? ++qty : --qty));
-  }
+  // defaults : {
+  //   'price': 1,
+  //   'qty': 1,
+  //   'total': 1
+  // },
+  //
+  // total: function () {
+  //   var total = this.get('price') * this.get('qty')
+  //   this.set('total', total);
+  //   return total;
+  // },
+  //
+  // quantity: function ( type ) {
+  //   var qty = this.get('qty');
+  //   this.set('qty', (type === 'increase' ? ++qty : --qty));
+  // }
 
 
 })

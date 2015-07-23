@@ -6,6 +6,10 @@
 
   <ul class="cart-features">
     <li class="price">$<%= order.get('price') %> USD</li>
+    <li class="quantity">
+      Qty: <%= order.get('num_units') %>
+    </li>
     <li class="remove-item" data-order-id="<%= order.id %>">Remove</li>
   </ul>
+
 </div>

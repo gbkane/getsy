@@ -5,6 +5,7 @@
     <% if(Getsy.currentCart.orders().length === 0){ %>
       Your Cart is Empty
     <% } %>
+    <h4 class="cart-total">Total: $<%= Getsy.currentCart.get('total') %></h4>
   </section>
 
   <button class="checkout">Checkout</button>
