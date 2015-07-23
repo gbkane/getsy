@@ -19,5 +19,6 @@ window.Getsy = {
       shops: Getsy.Collections.shops
     });
     Backbone.history.start();
+  
   }
 };
