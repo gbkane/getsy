@@ -285,6 +285,9 @@
     color: #fff;
   }
 
+  .query {
+    display: none;
+  }
   /*********** User Forms **********/
   .user-form, .shops-form, .items-form{
     width: 550px;
@@ -398,19 +401,43 @@
     padding-top: 8px;
   }
 
+  .results {
+    width: 980px;
+    margin: auto;
+    background: #fff;
+  }
+
   .thumb {
     float: left;
     border: 1px solid #eee;
     background: #fff;
     margin:8px 4px;
-
   }
 
-  .thumb > a >img{
+  .thumb > a >img, .thumb .shop-link{
     width: 174px;
     height: 150px;
     margin: auto;
     padding-bottom: 5px;
+  }
+
+  .thumb .shop-link {
+    width: 174px;
+    height:180px;
+    color: #666;
+    text-align: center;
+  }
+
+  .result-count {
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+  }
+
+  .thumb-shop-name {
+    padding-top: 60px;
+    font-style: italic;
   }
 
   .item-name {
@@ -444,7 +471,8 @@
   background: #fff;
 }
 
-.shop-name{
+
+.shop-name, .results-title{
   display: block;
   background: #fff;
   padding: 30px 10px;

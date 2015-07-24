@@ -21,9 +21,9 @@ Getsy.Views.Footer = Backbone.View.extend({
 
   addShop: function () {
     if(this.model.isSignedIn){
-      Backbone.history.navigate("#shops/new")
+      Backbone.history.navigate("#/shops/new")
     }else{
-      Backbone.history.navigate("#session/new")
+      Backbone.history.navigate("#/session/new")
     }
   }
 

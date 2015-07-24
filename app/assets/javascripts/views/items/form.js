@@ -24,13 +24,13 @@ Getsy.Views.ItemForm = Backbone.View.extend({
     event.preventDefault();
     var that = this;
     var attrs = this.$el.serializeJSON();
-    
+
     this.model.set(attrs);
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, {merge: true});
         Backbone.history.navigate(
-          "/shops/"+ that.model.get("shop_id"),
+          "#/shops/"+ that.model.get("shop_id"),
           {trigger: true}
         );
       }

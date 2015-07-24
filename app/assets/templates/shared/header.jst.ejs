@@ -4,7 +4,7 @@
     <ul class="nav-left group">
       <li>
         <% if (Getsy.currentUser.isSignedIn()){ %>
-          <a class="getsy" href="#shops">Getsy</a>
+          <a class="getsy" href="#/shops">Getsy</a>
         <% }else{ %>
           <a class="getsy" href="">Getsy</a>
         <% } %>
@@ -23,8 +23,8 @@
     <% if(Getsy.currentUser.isSignedIn()) { %>
 
       <ul class="nav-right group">
-        <li><a href="/#shops">Home</a></li>
-        <li><a href="#users/<%= Getsy.currentUser.id %>">
+        <li><a href="#/shops">Home</a></li>
+        <li><a href="#/users/<%= Getsy.currentUser.id %>">
           <%= Getsy.currentUser.escape("first_name") %>
           </a>
         </li>
@@ -33,16 +33,16 @@
           <button class="sign-out" id="sign-out-link">Sign Out</button>
         </li>
 
-        <li><a href="#carts/<%= Getsy.currentCart.id %>">Cart</a></li>
+        <li><a href="#/carts/<%= Getsy.currentCart.id %>">Cart</a></li>
       </ul>
 
     <% } else { %>
 
       <ul class="nav-right group">
         <li><a href="">Home</a></li>
-        <li><a href="#session/new">Sign In</a></li>
-        <li><a href="#users/new">Register</a></li>
-        <li><a href="#carts/<%= Getsy.currentCart.id %>">Cart</a></li>
+        <li><a href="#/session/new">Sign In</a></li>
+        <li><a href="#/users/new">Register</a></li>
+        <li><a href="#/carts/<%= Getsy.currentCart.id %>">Cart</a></li>
       </ul>
     <% } %>
 

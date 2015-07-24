@@ -1,36 +1,43 @@
-<h1>Search!</h1>
 
-<label>
-	Query
+
 	<input type="text" class="query">
-</label>
 
-<section class="results">
 
-<nav>
+<section class="results group">
+	<h1 class="results-title">Search Results</h1>
+
+
+<!-- <nav>
 	Displaying page number <%= results.pageNum %> out
 	of <%= results.total_count %> results
 	<a class="prev-page" href="javascript:void(0)">Prev</a>
 	<a class="next-page" href="javascript:void(0)">Next</a>
-</nav>
+</nav> -->
+	<text class="result-count">Found <%= results.length %> results
+	matching "<%= results.query %>"</text>
+
 
 	<% results.each(function (result) { %>
-		<article>
+		<article class="thumb">
 			<% if (result instanceof Getsy.Models.Item) { %>
-        <header>
-					<%= result.escape("name") %>
-				</header>
-				<%= result.escape("description") %>
+    			<a class="nav-link item-name" href="#/shops/<%= result.escape('shop_id')%>/items/<%=result.id%>">
+				  <img src="<%= result.escape('main_image_url') %>"
+				    alt="<%= result.escape('name') %>">
+				  <text><%= result.escape('name') %></text>
+				</a>
+
+
+				<text class="price">$<%= result.escape('price') %> <span> USD</span></text>
+
 
 			<% } else { %>
 
-				<header>
-					<%= result.escape("name") %>
-				</header>
+				<a class="nav-link shop-link" href="#/shops/<%= result.escape('id')%>">
+					<text class="thumb-shop-name"><%= result.escape('name') %></text>
 
-				<p><%= result.escape("description") %></p>
-
+				</a>
 			<% } %>
 		</article>
 	<% }) %>
+
 </section>

@@ -1,7 +1,7 @@
 
 
 <section class="item-show group">
-  <a class = "nav-link" href="/#shops/<%= item.escape('shop_id') %>">See all the items from this shop...</a>
+  <a class = "nav-link" href="#/shops/<%= item.escape('shop_id') %>">See all the items from this shop...</a>
   <div class="group">
     <section class="img-container">
       <img src="<%= item.escape('main_image_url') %>"
@@ -24,7 +24,7 @@
 
 
     <a class="nav-link"
-      href="/#shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
+      href="#/shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
       Edit Item...
     </a>
 

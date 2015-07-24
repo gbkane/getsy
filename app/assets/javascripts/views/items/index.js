@@ -26,7 +26,7 @@ Getsy.Views.ItemsIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    
+
     var content = this.template({
       item: this.model
     });
@@ -41,7 +41,7 @@ Getsy.Views.ItemsIndex = Backbone.CompositeView.extend({
     var view = new Getsy.Views.ItemThumb({
       model: item
     });
-    this.addSubview('#items', view)
+    this.addSubview('#/items', view)
   },
 
   renderItems: function () {

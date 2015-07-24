@@ -1,5 +1,5 @@
 
-<a class="nav-link item-name" href="/#shops/<%= item.escape('shop_id')%>/items/<%=item.id%>">
+<a class="nav-link item-name" href="#/shops/<%= item.escape('shop_id')%>/items/<%=item.id%>">
   <img src="<%= item.escape('main_image_url') %>"
     alt="<%= item.escape('name') %>">
   <text><%= item.escape('name') %></text>
@@ -8,6 +8,6 @@
 
 <text class="price">$<%= item.escape('price') %> <span> USD</span></text>
 <a class="edit nav-link"
-  href="/#shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
+  href="#/shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
   Edit Item...
 </a>

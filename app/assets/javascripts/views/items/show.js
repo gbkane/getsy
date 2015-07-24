@@ -21,11 +21,11 @@ Getsy.Views.ItemShow = Backbone.View.extend({
 
   addToCart: function (event){
     event.preventDefault();
-    
+
     Getsy.currentCart.addOrder(this.model);
 
     Backbone.history.navigate(
-      "#carts/"+ Getsy.currentCart.id,
+      "#/carts/"+ Getsy.currentCart.id,
       {trigger: true}
     );
 

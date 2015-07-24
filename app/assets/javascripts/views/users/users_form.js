@@ -34,7 +34,7 @@ Getsy.Views.UsersForm = Backbone.View.extend({
           email: userData.email,
           password: userData.password,
           success: function () {
-            Backbone.history.navigate("#shops", { trigger: true });
+            Backbone.history.navigate("#/shops", { trigger: true });
           },
           error: function(){
             alert("Wrong username/password combination. Please try again.");
