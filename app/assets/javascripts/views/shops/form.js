@@ -30,7 +30,7 @@ Getsy.Views.ShopForm = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, {merge: true});
-        Backbone.history.navigate("/shops/" + that.model.id, {trigger: true});
+        Backbone.history.navigate("#/shops/" + that.model.id, {trigger: true});
       }
     });
   }

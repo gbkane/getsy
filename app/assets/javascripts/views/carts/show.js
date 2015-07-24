@@ -7,7 +7,7 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    
+
     this.collection = this.model.orders()
     this.listenTo(this.model, 'sync change', this.render)
     this.listenTo(this.collection, 'add', this.addOrder);
@@ -77,7 +77,7 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   },
 
   checkout: function () {
-    Backbone.history.navigate("#checkout", {trigger:true})
+    Backbone.history.navigate("#/checkout", {trigger:true})
   }
 
 

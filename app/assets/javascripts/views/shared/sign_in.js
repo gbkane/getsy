@@ -46,7 +46,7 @@ Getsy.Views.SignIn = Backbone.View.extend({
     if(this.callback) {
       this.callback();
     } else {
-      Backbone.history.navigate("#shops", { trigger: true });
+      Backbone.history.navigate("#/shops", { trigger: true });
     }
   }
 

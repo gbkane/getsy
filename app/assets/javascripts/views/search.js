@@ -3,6 +3,7 @@ Getsy.Views.Search = Backbone.View.extend({
 	initialize: function () {
 		this.bindScroll(); // for infinite scroll
 		this.searchResults = new Getsy.Collections.SearchResults();
+		this.searchResults.query = Getsy.query;
 		this.searchResults.pageNum = 1;
 		this.listenTo(this.searchResults, "sync", this.render);
 	},
@@ -20,6 +21,12 @@ Getsy.Views.Search = Backbone.View.extend({
 			results: this.searchResults
 		});
 		this.$el.html(content);
+		if(Getsy.query){
+			this.$(".query").val(Getsy.query)
+			Getsy.query = null;
+			this.search(event);
+		}
+
 
 		return this;
 	},
