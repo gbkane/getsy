@@ -85,8 +85,12 @@
     cursor: pointer;
   }*/
 
-  .search:active, .browse:active, .submit:active, button:active {
+  .search:active, .browse:active, .submit:active, .add-shop:active {
     background: #01698C;
+  }
+
+  a.sign-up:hover {
+    text-decoration: underline;
   }
 
   .search, .submit, .add-shop{

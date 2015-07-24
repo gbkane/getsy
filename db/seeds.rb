@@ -22,12 +22,14 @@ u7 = User.create(email: 'karate@pawnee.gov', password: 'password',
 u8 = User.create(email: 'haverford@pawnee.gov', password: 'password',
 	first_name: 'Tom', last_name: 'Haverford', sex: 'M')
 
+
+
 # s1 = u1.shops.create(name: "Rare Items")
 # s2 = u1.shops.create(name: "Ordinary Things Shop")
 s3 = u3.shops.create(name: "Very Good Goods", description: "Hand made goods of very good quality.")
 # s4 = u4.shops.create(name: "Perfect Planners", description: "Highly detailed binders for every occasion.")
 s5 = u5.shops.create(name: "Dunshire Dominion", description: "Home of the Cones of Dunshire!")
-s6 = u6.shops.create(name: "April's Lost and Found", description: "Repurposed things that I found.")
+s6 = u2.shops.create(name: "Guest's Lost and Found", description: "Repurposed things that I found.")
 s7 = u7.shops.create(name: "Johnny Karate's Super Amazing Store.", description: "Karate awesomeness. Also, Burt Macklin approved gear.")
 # s8 = u8.shops.create(name: "Swag", description: "You need everything I have.")
 
