@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: carts
+#
+#  id      :integer          not null, primary key
+#  user_id :integer
+#  total   :float            default(0.0), not null
+#
+
 class Cart < ActiveRecord::Base
   has_many :orders
   belongs_to :user

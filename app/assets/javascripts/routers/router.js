@@ -24,13 +24,19 @@ Getsy.Routers.Router = Backbone.Router.extend({
     "shops/:id/edit": "shopEdit",
     "shops/:shop_id/items/new" : "itemNew",
     "shops/:shop_id/items/:id": "itemShow",
-    "shops/:shop_id/items/:id/edit": "itemEdit"
+    "shops/:shop_id/items/:id/edit": "itemEdit",
+    "search": "search"
   },
 
   splash: function (){
     var view = new Getsy.Views.Splash();
     this._swapView(view);
   },
+  search: function () {
+		var view = new Getsy.Views.Search();
+
+		this._swapView(view);
+	},
 
   completedCheckout: function (){
     Getsy.currentCart.fetch();

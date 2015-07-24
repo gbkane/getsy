@@ -6,14 +6,16 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  first_name           :string           not null
-#  last_name           :string           not null
 #  sex             :string
 #  street          :string
 #  state           :string
 #  zip             :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  provider        :string
+#  uid             :string
+#  first_name      :string
+#  last_name       :string
 #
 
 class User < ActiveRecord::Base
