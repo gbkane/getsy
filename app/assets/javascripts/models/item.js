@@ -3,6 +3,17 @@ Getsy.Models.Item = Backbone.Model.extend({
     return 'api/shops/'+ this.get('shop_id') + '/items';
   },
 
+  shop: function () {
+    debugger
+  },
+
+  items: function () {
+    if (!this._items) {
+      this._items = new Getsy.Collections.Items([], {shop: this});
+    }
+
+    return this._items
+  },
 //this probably belongs somewhere else
   // defaults : {
   //   'price': 1,

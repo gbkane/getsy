@@ -7,8 +7,10 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-
+    debugger
     this.collection = this.model.orders();
+    this.collection.fetch();
+    this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.model, 'sync change', this.render);
     this.listenTo(this.collection, 'add', this.addOrder);
     this.listenTo(this.collection, 'remove', this.removeOrder);

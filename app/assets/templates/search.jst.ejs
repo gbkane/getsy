@@ -20,7 +20,7 @@
 	<% results.each(function (result) { %>
 		<article class="thumb">
 			<% if (result instanceof Getsy.Models.Item) { %>
-    			<a class="nav-link item-name" href="#/shops/<%= result.escape('shop_id')%>/items/<%=result.id%>">
+    			<a class="nav-link item-name" href="#/shops/<%= result.escape('shop_id')%>/items/<%=result.escape('item_id')%>">
 				  <img src="<%= result.escape('main_image_url') %>"
 				    alt="<%= result.escape('name') %>">
 				  <text><%= result.escape('name') %></text>
@@ -32,7 +32,7 @@
 
 			<% } else { %>
 
-				<a class="nav-link shop-link" href="#/shops/<%= result.escape('id')%>">
+				<a class="nav-link shop-link" href="#/shops/<%= result.escape('shop_id')%>">
 					<text class="thumb-shop-name"><%= result.escape('name') %></text>
 
 				</a>

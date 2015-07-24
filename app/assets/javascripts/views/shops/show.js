@@ -10,6 +10,7 @@ Getsy.Views.ShopShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
+
     var content = this.template({
       shop: this.model
     });
@@ -22,6 +23,7 @@ Getsy.Views.ShopShow = Backbone.CompositeView.extend({
   addItem: function (item){
 
     var view = new Getsy.Views.ItemThumb({
+      collection: this.model,
       model: item
     });
     this.addSubview('#items', view)

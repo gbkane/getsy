@@ -7,7 +7,9 @@
 
 
 <text class="price">$<%= item.escape('price') %> <span> USD</span></text>
-<a class="edit nav-link"
-  href="#/shops/<%= item.escape('shop_id') %>/items/<%=item.escape('id')%>/edit">
-  Edit Item...
-</a>
+<% if(Getsy.currentUser.id === shop.get('owner_id')){ %>
+  <a class="edit nav-link"
+    href="#/shops/<%= item.get('shop_id') %>/items/<%=item.id%>/edit">
+    Edit Item...
+  </a>
+<% } %>

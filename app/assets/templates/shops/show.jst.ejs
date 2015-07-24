@@ -1,19 +1,20 @@
 <section class="shop-show group">
   <section class="title">
     <h1 class="shop-name"><%= shop.escape("name") %></h1>
-    <p class="description"><%= shop.escape("description") %></p>
+
   </section>
-
-
 
   <section id="items"></section>
   <section class="left-sidebar">
-    <a class="nav-link" href="/#shops/<%= shop.escape('id') %>/edit">
-      Edit Shop Info...
-    </a>
-    <a class="nav-link"
-      href="/#shops/<%= shop.escape('id') %>/items/new">
-      Add new item...
-    </a>
+    <p class="description"><%= shop.escape("description") %></p>
+    <% if(Getsy.currentUser.id === shop.escape('owner_id')){ %>
+      <a class="nav-link" href="/#shops/<%= shop.escape('id') %>/edit">
+        Edit Shop Info...
+      </a>
+      <a class="nav-link"
+        href="/#shops/<%= shop.escape('id') %>/items/new">
+        Add new item...
+      </a>
+    <% } %>
 </section>
 </section>
