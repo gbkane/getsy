@@ -27,7 +27,9 @@ Getsy.Collections.Orders = Backbone.Collection.extend({
   //   return order;
   // }
   url: function () {
-    return 'api/carts/'+ this.get('cart_id') + '/orders'
+    debugger
+    // return 'api/carts/'+ this.get('cart_id') + '/orders'
+    return 'api/orders'
   },
   model: Getsy.Models.Order,
 

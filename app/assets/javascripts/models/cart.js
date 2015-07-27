@@ -3,6 +3,7 @@ Getsy.Models.Cart = Backbone.Model.extend({
 
   orders: function () {
     if (!this._orders) {
+      debugger
       this._orders = new Getsy.Collections.Orders([], {cart: this});
     }
 
