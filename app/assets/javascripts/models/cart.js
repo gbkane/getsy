@@ -3,7 +3,6 @@ Getsy.Models.Cart = Backbone.Model.extend({
 
   orders: function () {
     if (!this._orders) {
-      debugger
       this._orders = new Getsy.Collections.Orders([], {cart: this});
     }
 
@@ -11,19 +10,16 @@ Getsy.Models.Cart = Backbone.Model.extend({
   },
 
   addOrder: function(item) {
-    var order;// = this.findOrder(item.get('id'));
-
+    var order;
     order = new Getsy.Models.Order({item: item });
     order.save({ data: { item_id: item.get('id') } });
   },
 
   parse: function (response) {
-
     if (response.orders) {
       this.orders().set(response.orders, {parse: true});
       delete response.orders;
     }
-
     return response;
   }
 

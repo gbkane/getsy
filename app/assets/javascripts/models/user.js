@@ -66,10 +66,8 @@ Getsy.Models.CurrentUser = Getsy.Models.User.extend({
   fireSessionEvent: function(){
     if(this.isSignedIn()){
       this.trigger("signIn");
-      // console.log("currentUser is signed in!", this);
     } else {
       this.trigger("signOut");
-      // console.log("currentUser is signed out!", this);
     }
   }
 

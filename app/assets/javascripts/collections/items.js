@@ -27,17 +27,6 @@ Getsy.Collections.Items = Backbone.Collection.extend({
     return item;
   },
 
-  // subtotal: function () {
-  //   var total = 0;
-  //
-  //   this.each( function(model) {
-  //     total += model.total();
-  //   })
-  //
-  //   return total.toFixed(2);
-  // }
-
 });
 
-// Getsy.Collections.items = new Getsy.Collections.Items();
-Getsy.cartItems = new Getsy.Collections.Items();
+// Getsy.cartItems = new Getsy.Collections.Items();

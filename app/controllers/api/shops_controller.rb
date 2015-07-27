@@ -8,7 +8,6 @@ module Api
     def index
       @shops = Shop.all
       render :index
-      # render json: @shops
     end
 
     def new

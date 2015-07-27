@@ -1,9 +1,6 @@
 Getsy.Models.Order = Backbone.Model.extend({
-  urlRoot: function () {
-    debugger
-    // return 'api/carts/'+ this.get('cart_id') + '/orders';
-    return 'api/orders';
-  },
+  urlRoot: 'api/orders',
+
   initialize: function(options) {
     if(options.item) {
       this._item = options.item;
