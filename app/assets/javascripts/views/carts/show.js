@@ -69,7 +69,7 @@ Getsy.Views.CartShow = Backbone.CompositeView.extend({
   },
 
   renderOrders: function () {
-    // debugger
+
     this.model.orders().each(this.addOrder.bind(this));
     var total = 0;
     this.model.orders().each( function (order){

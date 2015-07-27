@@ -7,7 +7,6 @@ Getsy.Views.Header = Backbone.View.extend({
 
   },
 
-
   events: {
     "click #sign-out-link": "signOut",
 		"change .text-search": "search",
