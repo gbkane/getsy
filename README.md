@@ -5,11 +5,7 @@
 
 Welcome to Getsy, a marketplace for handmade goods inspired by Etsy.
 
-Navigate through the site with or without signing in.  In order to
-access adding a shop or items, however, you will need to be logged in.  
-If you are just checking things out, I have provided a guest login.  
-You will have access to the Guest Shop's edit and create forms.  You
-may also create a brand new shop and list items for sale.  
+Navigate through the site with or without signing in.  In order to access adding a shop or items, however, you will need to be logged in.  If you are just checking things out, I have provided a guest login.  You will have access to the Guest Shop's edit and create forms.  You may also create a brand new shop and list items for sale.  
 
 ### About
 * Single-page Backbone app consuming RESTful JSON Rails API
